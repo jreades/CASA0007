@@ -26,17 +26,24 @@ GEE is free and allows users to write open-source code that can be run by others
 Despite only being released in 2015, the number of geospatial journal articles using Google Earth Engine (shown in red above) has outpaced every other major geospatial analysis software, including ArcGIS, Python, and R in just five years. GEE applications have been developed and used to present interactive geospatial data visualizations by NGOs, Universities, the United Nations, and the European Commission. By storing and running computations on google servers, GEE is far more accessible to those who don’t have significant local computational resources; all you need is an internet connection. 
 
 ## Table of Contents
-
-        * [Exploratory Data Analysis I](W01_intro.qmd)
-        * [Exploratory Data Analysis II](W02_SQL.qmd)
-        * [Hypothesis Testing](W03_postgis1.qmd)
-        * [Introduction to Linear Algebra](W04_postgis2.qmd)
-        * [Measuring Relationships](W05_quiz.qmd)
-        * [Introduction to Regression](W06_RS.qmd)
-        * [Generalised Linear Model](W07_refineries.qmd)
-        * [Multilevel Regression](W08_ISM.qmd)
-        * [Dimensionality Reduction](W09_blast.qmd)
-        * [Clustering Analysis](W10_ships.qmd)
+A) **Basics**
+    * Four initial weeks on probability, data types, hypothesis testing, linear algebra.
+        * [Introduction](W01_intro.qmd)
+        * [SQL](W02_SQL.qmd)
+        * [PostGIS I](W03_postgis1.qmd)
+        * [PostGIS II](W04_postgis2.qmd)
+        * [Database Quiz](W05_quiz.qmd)
+B) **Correlation and regression**
+    * Four weeks on correlation and regression.
+        * [Introduction to GEE](W06_RS.qmd)
+        * [Classification I](W07_refineries.qmd)
+        * [Classification II](W08_ISM.qmd)
+        * [Synthetic Aperture Radar](W09_blast.qmd)
+        * [User Interface Design](W10_ships.qmd)
+C) **Dimension Reduction & Clustering**
+    * Two weeks on techniques of dimension reduction and clustering.
+        * [Introduction to GEE](W06_RS.qmd)
+        * [Classification I](W07_refineries.qmd)
 
 
 **GEE Textbook**
