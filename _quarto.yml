@@ -2,9 +2,9 @@ project:
   type: book
   output-dir: docs
 book:
-  title: "CASA0007: \n Building Spatial Applications with Big Data"
+  title: "CASA0007: \n Quantitative Methods"
   author: "[Dr Huanfa Chen](https://huanfachen.github.io)"
-  date: "01/10/2024"
+  date: "03/07/2025"
   chapters:
     - index.qmd
     - part: "A. SQL"
