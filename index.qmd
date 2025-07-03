@@ -27,15 +27,11 @@ Despite only being released in 2015, the number of geospatial journal articles u
 
 ## Table of Contents
 
-A) **SQL**
-    * Five initial weeks exporing spatial database systems including PostgreSQL and DuckDB.
         * [Introduction](W01_intro.qmd)
         * [SQL](W02_SQL.qmd)
         * [PostGIS I](W03_postgis1.qmd)
         * [PostGIS II](W04_postgis2.qmd)
         * [Database Quiz](W05_quiz.qmd)
-B) **Google Earth Engine**
-    * Five weeks on Google Earth Engine, a cloud-based platform for geospatial analysis.
         * [Introduction to GEE](W06_RS.qmd)
         * [Classification I](W07_refineries.qmd)
         * [Classification II](W08_ISM.qmd)
