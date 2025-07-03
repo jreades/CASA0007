@@ -2,8 +2,8 @@ project:
   type: book
   output-dir: docs
 book:
-  title: "CASA0025: \n Building Spatial Applications with Big Data"
-  author: "[Dr. Ollie Ballinger](https://oballinger.github.io)"
+  title: "CASA0007: \n Building Spatial Applications with Big Data"
+  author: "[Dr Huanfa Chen](https://huanfachen.github.io)"
   date: "01/10/2024"
   chapters:
     - index.qmd
@@ -27,7 +27,7 @@ book:
         - F2.qmd
         - F4.qmd
         - F5.qmd
-  repo-url: https://github.com/oballinger/CASA0025/
+  repo-url: https://github.com/huanfachen/CASA0007/
   google-analytics: G-RK9ZLZQ6GL
   repo-actions: [edit]
   downloads: [pdf, epub]
