@@ -28,7 +28,7 @@ Despite only being released in 2015, the number of geospatial journal articles u
 ## Table of Contents
 A) **Basics**
     * Four initial weeks on probability, data types, hypothesis testing, linear algebra.
-        * [Exploratory Data Analysis I](W01_intro.qmd)
+        * [Exploratory Data Analysis I](W01_EDA1.qmd)
         * [Exploratory Data Analysis II](W02_SQL.qmd)
         * [Hypothesis Testing](W03_postgis1.qmd)
         * [Introduction to Linear Algebra](W04_postgis2.qmd)

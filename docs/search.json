@@ -38,5 +38,159 @@
     "crumbs": [
       "Module Overview"
     ]
+  },
+  {
+    "objectID": "W01_EDA1.html",
+    "href": "W01_EDA1.html",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "",
+    "text": "1.1 DuckDB\nA database management system (DBMS) allows users to store, insert, delete, and update information in a database. Spatial databases go a step further because they record data with geographic coordinates.\nFrom Esri Geodatabase to PostGIS, spatial databases have quickly become the primary method of managing spatial data.\nTo learn more about spatial databases, check out the resources below:\nDuckDB is an in-process SQL OLAP database management system. It is designed to be used as an embedded database in applications, but it can also be used as a standalone SQL database.\nDuckDB is a great option if you’re looking for a serverless data analytics database management system.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#duckdb",
+    "href": "W01_EDA1.html#duckdb",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "",
+    "text": "In-process SQL means that DuckDB’s features run in your application, not an external process to which your application connects. In other words: there is no client sending instructions nor a server to read and process them. SQLite works the same way, while PostgreSQL, MySQL…, do not.\nOLAP stands for OnLine Analytical Processing, and Microsoft defines it as a technology that organizes large business databases and supports complex analysis. It can be used to perform complex analytical queries without negatively affecting transactional systems.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#postgresql-for-microsoft-windows",
+    "href": "W01_EDA1.html#postgresql-for-microsoft-windows",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "3.1 PostgreSQL for Microsoft Windows",
+    "text": "3.1 PostgreSQL for Microsoft Windows\nFor a Windows install:\n\nGo to the Windows PostgreSQL download page.\nSelect the latest version of PostgreSQL and save the installer to disk.\nRun the installer and accept the defaults.\nFind and run the \"StackBuilder\" program that was installed with the database.\nSelect the \"Spatial Extensions\" section and choose latest \"PostGIS ..Bundle\" option.\n\n\n\nimage\n\n\nAccept the defaults and install.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#postgresql-for-apple-macos",
+    "href": "W01_EDA1.html#postgresql-for-apple-macos",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "3.2 PostgreSQL for Apple MacOS",
+    "text": "3.2 PostgreSQL for Apple MacOS\nFor a MacOS install:\n\nGo to the Postgres.app site, and download the latest release.\nOpen the disk image, and drag the Postgres icon into the Applications folder.\n\n\n\nimage\n\n\nIn the Applications folder, double-click the Postgres icon to start the server.\nClick the Initialize button to create a new blank database instance.\n{.inline, .border .inline, .border}\nIn the Applications folder, go to the Utilities folder and open Terminal.\nAdd the command-line utilities to your PATH for convenience.\n\n\nsudo mkdir -p /etc/paths.d\necho /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#pgadmin-for-windows-and-macos",
+    "href": "W01_EDA1.html#pgadmin-for-windows-and-macos",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "3.3 PgAdmin for Windows and MacOS",
+    "text": "3.3 PgAdmin for Windows and MacOS\nPgAdmin is available for multiple platforms, at https://www.pgadmin.org/download/.\n\nDownload and install the latest version for your platform.\nStart PgAdmin!\n\n\n\nimage",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#pgadmin",
+    "href": "W01_EDA1.html#pgadmin",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "4.1 PgAdmin",
+    "text": "4.1 PgAdmin\nPostgreSQL has a number of administrative front-ends. The primary one is psql, a command-line tool for entering SQL queries. Another popular PostgreSQL front-end is the free and open source graphical tool pgAdmin. All queries done in pgAdmin can also be done on the command line with psql. pgAdmin also includes a geometry viewer you can use to spatial view PostGIS queries.\n\nFind pgAdmin and start it up.\n\n\n\nimage\n\n\nIf this is the first time you have run pgAdmin, you probably don't have any servers configured. Right click the Servers item in the Browser panel.\nWe'll name our server PostGIS. In the Connection tab, enter the Host name/address. If you're working with a local PostgreSQL install, you'll be able to use localhost. If you're using a cloud service, you should be able to retrieve the host name from your account.\nLeave Port set at 5432, and both Maintenance database and Username as postgres. The Password should be what you specified with a local install or with your cloud service.\n\n\n\nimage",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#creating-a-database",
+    "href": "W01_EDA1.html#creating-a-database",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "4.2 Creating a Database",
+    "text": "4.2 Creating a Database\n\nOpen the Databases tree item and have a look at the available databases. The postgres database is the user database for the default postgres user and is not too interesting to us.\nRight-click on the Databases item and select New Database.\n\n\n\nimage\n\n\nFill in the Create Database form as shown below and click OK.\n\n\n\nName\nnyc\n\n\nOwner\npostgres\n\n\n\n\n\n\nimage\n\n\nSelect the new nyc database and open it up to display the tree of objects. You'll see the public schema.\n\n\n\nimage\n\n\nClick on the SQL query button indicated below (or go to Tools &gt; Query Tool).\n\n\n\nimage\n\n\nEnter the following query into the query text field to load the PostGIS spatial extension:\nCREATE EXTENSION postgis;\nClick the Play button in the toolbar (or press F5) to \"Execute the query.\"\nNow confirm that PostGIS is installed by running a PostGIS function:\nSELECT postgis_full_version();\n\nYou have successfully created a PostGIS spatial database!!",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#function-list",
+    "href": "W01_EDA1.html#function-list",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "4.3 Function List",
+    "text": "4.3 Function List\nPostGIS_Full_Version: Reports full PostGIS version and build configuration info.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#loading-the-backup-file",
+    "href": "W01_EDA1.html#loading-the-backup-file",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.1 Loading the Backup File",
+    "text": "5.1 Loading the Backup File\n\nIn the PgAdmin browser, right-click on the nyc database icon, and then select the Restore... option.\n{.inline, .border .inline, .border}\nBrowse to the location of your workshop data data directory (available in the workshop data bundle), and select the nyc_data.backup file.\n{.inline, .border .inline, .border}\nClick on the Restore options tab, scroll down to the Do not save section and toggle Owner to Yes.\n{.inline, .border .inline, .border}\nClick the Restore button. The database restore should run to completion without errors.\n{.inline, .border .inline, .border}\nAfter the load is complete, right click the nyc database, and select the Refresh option to update the client information about what tables exist in the database.\n{.inline, .border .inline, .border}\n\n\n\nNote\n\nIf you want to practice loading data from the native spatial formats, instead of using the PostgreSQL db backup files just covered, the next couple of sections will guide you thru loading using various command-line tools and QGIS DbManager. Note you can skip these sections, if you have already loaded the data with pgAdmin.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#shapefiles-whats-that",
+    "href": "W01_EDA1.html#shapefiles-whats-that",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.2 Shapefiles? What's that?",
+    "text": "5.2 Shapefiles? What's that?\nYou may be asking yourself -- \"What's this shapefile thing?\" A \"shapefile\" commonly refers to a collection of files with .shp, .shx, .dbf, and other extensions on a common prefix name (e.g., nyc_census_blocks). The actual shapefile relates specifically to files with the .shp extension. However, the .shp file alone is incomplete for distribution without the required supporting files.\nMandatory files:\n\n.shp—shape format; the feature geometry itself\n.shx—shape index format; a positional index of the feature geometry\n.dbf—attribute format; columnar attributes for each shape, in dBase III\n\nOptional files include:\n\n.prj—projection format; the coordinate system and projection information, a plain text file describing the projection using well-known text format\n\nThe shp2pgsql utility makes shape data usable in PostGIS by converting it from binary data into a series of SQL commands that are then run in the database to load the data.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#loading-with-shp2pgsql",
+    "href": "W01_EDA1.html#loading-with-shp2pgsql",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.3 Loading with shp2pgsql",
+    "text": "5.3 Loading with shp2pgsql\nThe shp2pgsql converts Shape files into SQL. It is a conversion utility that is part of the PostGIS code base and ships with PostGIS packages. If you installed PostgreSQL locally on your computer, you may find that shp2pgsql has been installed along with it, and it is available in the executable directory of your installation.\nUnlike ogr2ogr, shp2pgsql does not connect directly to the destination database, it just emits the SQL equivalent to the input shape file. It is up to the user to pass the SQL to the database, either with a \"pipe\" or by saving the SQL to file and then loading it.\nHere is an example invocation, loading the same data as before:\nexport PGPASSWORD=mydatabasepassword\n\nshp2pgsql \\\n  -D \\\n  -I \\\n  -s 26918 \\\n  nyc_census_blocks_2000.shp \\\n  nyc_census_blocks_2000 \\\n  | psql dbname=nyc user=postgres host=localhost\nHere is a line-by-line explanation of the command.\nshp2pgsql \\\nThe executable program! It reads the source data file, and emits SQL which can be directed to a file or piped to psql to load directly into the database.\n-D \\\nThe D flag tells the program to generate \"dump format\" which is much faster to load than the default \"insert format\".\n-I \\\nThe I flag tells the program to create a spatial index on the table after loading is complete.\n-s 26918 \\\nThe s flag tells the program what the \"spatial reference identifier (SRID)\" of the data is. The source data for this workshop is all in \"UTM 18\", for which the SRID is 26918 (see below).\nnyc_census_blocks_2000.shp \\\nThe source shape file to read.\nnyc_census_blocks_2000 \\\nThe table name to use when creating the destination table.\n| psql dbname=nyc user=postgres host=localhost\nThe utility program is generating a stream of SQL. The \"|\" operator takes that stream and uses it as input to the psql database terminal program. The arguments to psql are just the connection string for the destination database.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#srid-26918-whats-with-that",
+    "href": "W01_EDA1.html#srid-26918-whats-with-that",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.4 SRID 26918? What's with that?",
+    "text": "5.4 SRID 26918? What's with that?\nMost of the import process is self-explanatory, but even experienced GIS professionals can trip over an SRID.\nAn \"SRID\" stands for \"Spatial Reference IDentifier.\" It defines all the parameters of our data's geographic coordinate system and projection. An SRID is convenient because it packs all the information about a map projection (which can be quite complex) into a single number.\nYou can see the definition of our workshop map projection by looking it up either in an online database,\n\nhttps://epsg.io/26918\n\nor directly inside PostGIS with a query to the spatial_ref_sys table.\nSELECT srtext FROM spatial_ref_sys WHERE srid = 26918;\n\n\nNote\n\nThe PostGIS spatial_ref_sys table is an OGC-standard table that defines all the spatial reference systems known to the database. The data shipped with PostGIS, lists over 3000 known spatial reference systems and details needed to transform/re-project between them.\n\nIn both cases, you see a textual representation of the 26918 spatial reference system (pretty-printed here for clarity):\nPROJCS[\"NAD83 / UTM zone 18N\",\n  GEOGCS[\"NAD83\",\n    DATUM[\"North_American_Datum_1983\",\n      SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],\n      AUTHORITY[\"EPSG\",\"6269\"]],\n    PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4269\"]],\n  UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],\n  PROJECTION[\"Transverse_Mercator\"],\n  PARAMETER[\"latitude_of_origin\",0],\n  PARAMETER[\"central_meridian\",-75],\n  PARAMETER[\"scale_factor\",0.9996],\n  PARAMETER[\"false_easting\",500000],\n  PARAMETER[\"false_northing\",0],\n  AUTHORITY[\"EPSG\",\"26918\"],\n  AXIS[\"Easting\",EAST],\n  AXIS[\"Northing\",NORTH]]\nIf you open up the nyc_neighborhoods.prj file from the data directory, you'll see the same projection definition.\nData you receive from local agencies—such as New York City—will usually be in a local projection noted by \"state plane\" or \"UTM\". Our projection is \"Universal Transverse Mercator (UTM) Zone 18 North\" or EPSG:26918.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#things-to-try-view-data-using-qgis",
+    "href": "W01_EDA1.html#things-to-try-view-data-using-qgis",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.5 Things to Try: View data using QGIS",
+    "text": "5.5 Things to Try: View data using QGIS\nQGIS, is a desktop GIS viewer/editor for quickly looking at data. You can view a number of data formats including flat shapefiles and a PostGIS database. Its graphical interface allows for easy exploration of your data, as well as simple testing and fast styling.\nTry using this software to connect your PostGIS database. The application can be downloaded from https://qgis.org\nYou'll first want to create a connection to a PostGIS database using menu Layer-&gt;Add Layer-&gt;PostGIS Layers-&gt;New and then filling in the prompts. Once you have a connection, you can add Layers by clicking connect and selecting a table to display.",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#loading-data-using-qgis-dbmanager",
+    "href": "W01_EDA1.html#loading-data-using-qgis-dbmanager",
+    "title": "1  Explanatory Data Analysis I",
+    "section": "5.6 Loading data using QGIS DbManager",
+    "text": "5.6 Loading data using QGIS DbManager\nQGIS comes with a tool called DbManager that allows you to connect to various different kinds of databases, including a PostGIS enabled one. After you have a PostGIS Database connection configured, go to Database-&gt;DbManager and expand to your database as shown below:\n{.inline, .border .inline, .border}\nFrom there you can use the Import Layer/File menu option to load numerous different spatial formats. In addition to being able to load data from many spatial formats and export data to many formats, you can also add ad-hoc queries to the canvas or define views in your database, using the highlighted wrench icon.\nThis section is based on the PostGIS Intro Workshop, sections 3, 4, 5,and 7",
+    "crumbs": [
+      "A. SQL",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+    ]
   }
 ]

@@ -9,7 +9,7 @@ book:
     - index.qmd
     - part: "A. SQL"
       chapters:
-        - W01_intro.qmd
+        - W01_EDA1.qmd
         - W02_SQL.qmd
         - W03_postgis1.qmd
         - W04_postgis2.qmd

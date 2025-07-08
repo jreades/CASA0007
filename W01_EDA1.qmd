@@ -1,4 +1,4 @@
-# Spatial databases
+# Explanatory Data Analysis I
 
 A database management system (DBMS) allows users to store, insert, delete, and update information in a database. Spatial databases go a step further because they record data with geographic coordinates.
 
