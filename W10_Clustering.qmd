@@ -1,4 +1,4 @@
-# Ship Detection
+# Clustering
 
 There's a huge amount of data available on the internet about ship movements, most of which draw on the Automatic Identification System (AIS) which is a system that uses radio to broadcast the identity, position, course, speed, and other data about ships. [MarineTraffic](https://www.marinetraffic.com/en/ais-api-services), for example, provides an API that allows you to query the location of ships in real time as well as historical vessel tracks and lots of other useful data. Unfortunately most sources of AIS data are paywalled, and AIS can be turned off or manipulated to hide the identity or position of the ship. In fact, most of the stuff we're interested in investigating probably happens when AIS is turned off. 
 

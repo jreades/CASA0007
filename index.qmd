@@ -29,24 +29,16 @@ Despite only being released in 2015, the number of geospatial journal articles u
 A) **Basics**
     * Four initial weeks on probability, data types, hypothesis testing, linear algebra.
         * [Exploratory Data Analysis I](W01_EDA1.qmd)
-        * [Exploratory Data Analysis II](W02_SQL.qmd)
-        * [Hypothesis Testing](W03_postgis1.qmd)
-        * [Introduction to Linear Algebra](W04_postgis2.qmd)
-B) **Correlation and regression**
+        * [Exploratory Data Analysis II](W02_EDA2.qmd)
+        * [Hypothesis Testing](W03_HypoTesting.qmd)
+        * [Introduction to Linear Algebra](W04_LA.qmd)
+B) **Correlation and Regression**
     * Four weeks on correlation and regression.
-        * [Measuring Relationships](W05_quiz.qmd)
-        * [Introduction to Regression](W06_RS.qmd)
-        * [Generalised Linear Model](W07_refineries.qmd)
-        * [Multilevel Regression](W08_ISM.qmd)
+        * [Measuring Relationships](W05_Correlation.qmd)
+        * [Introduction to Regression](W06_Regression.qmd)
+        * [Generalised Linear Model](W07_GLM.qmd)
+        * [Multilevel Regression](W08_MLReg.qmd)
 C) **Dimension Reduction & Clustering**
     * Two weeks on techniques of dimension reduction and clustering.
-        * [Dimensionality Reduction](W09_blast.qmd)
-        * [Clustering Analysis](W10_ships.qmd)
-
-
-**GEE Textbook**
-    * Recently, a team of over 100 scientists came together to write a book called ["Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications"](https://www.eefabook.org/). It's a great resource for learning about remote sensing and Earth Engine. The material in this section is a subset of the book, edited to fit the scope of this guide. If you're interested in learning more, check out the full book.
-        * [Getting Started](F1.qmd)
-        * [Interpreting Images](F2.qmd)
-        * [Image Series](F4.qmd)
-        * [Vectors and Tables](F5.qmd)
+        * [Dimensionality Reduction](W09_DR.qmd)
+        * [Clustering Analysis](W10_Clustering.qmd)

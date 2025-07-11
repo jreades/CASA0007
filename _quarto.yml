@@ -7,26 +7,23 @@ book:
   date: "07/03/2025"
   chapters:
     - index.qmd
-    - part: "A. SQL"
+    - part: "A. Basics"
       chapters:
         - W01_EDA1.qmd
-        - W02_SQL.qmd
-        - W03_postgis1.qmd
-        - W04_postgis2.qmd
-        - W05_quiz.qmd
-    - part: "B. Google Earth Engine"
+        - W02_EDA2.qmd
+        - W03_HypoTesting.qmd
+        - W04_LA.qmd
+
+    - part: "B. Correlation and Regression"
       chapters:
-        - W06_RS.qmd
-        - W07_refineries.qmd
-        - W08_ISM.qmd
-        - W09_blast.qmd
-        - W10_ships.qmd
-    - part: "GEE Textbook"
+        - W05_Correlation.qmd
+        - W06_Regression.qmd
+        - W07_GLM.qmd
+        - W08_MLReg.qmd
+    - part: "Dimension Reduction & Clustering"
       chapters:
-        - F1.qmd
-        - F2.qmd
-        - F4.qmd
-        - F5.qmd
+        - W09_DR.qmd
+        - W10_Clustering.qmd
   repo-url: https://github.com/huanfachen/CASA0007/
   google-analytics: G-NJWVSV2MSC
   repo-actions: [edit]

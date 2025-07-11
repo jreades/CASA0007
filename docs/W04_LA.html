@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Quiz – CASA0007: 
+<title>4&nbsp; Spatial SQL II – CASA0007: 
  Quantitative Methods</title>
 <style>
 code{white-space: pre-wrap;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./W06_Regression.html" rel="next">
-<link href="./W04_LA.html" rel="prev">
+<link href="./W05_Correlation.html" rel="next">
+<link href="./W03_HypoTesting.html" rel="prev">
 <link href="./favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -255,7 +255,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W04_LA.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial SQL II</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -346,8 +346,8 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W02_SQL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to SQL</span></span></a>
+  <a href="./W02_EDA2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -358,7 +358,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W04_LA.html" class="sidebar-item-text sidebar-link">
+  <a href="./W04_LA.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial SQL II</span></span></a>
   </div>
 </li>
@@ -375,7 +375,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W05_Correlation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./W05_Correlation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></span></a>
   </div>
 </li>
@@ -427,16 +427,28 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#spatial-joins-exercises" id="toc-spatial-joins-exercises" class="nav-link active" data-scroll-target="#spatial-joins-exercises"><span class="header-section-number">5</span> Spatial Joins Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6</span> Exercises</a></li>
+  <li><a href="#ship-to-ship-transfer-detection" id="toc-ship-to-ship-transfer-detection" class="nav-link" data-scroll-target="#ship-to-ship-transfer-detection"><span class="header-section-number">7</span> Ship-to-Ship Transfer Detection</a>
+  <ul class="collapse">
+  <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1"><span class="header-section-number">7.1</span> Step 1</a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2"><span class="header-section-number">7.2</span> Step 2</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W04_LA.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W04_LA.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial SQL II</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial SQL II</span></h1>
 </div>
 
 
@@ -453,9 +465,99 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </header>
 
 
-<p>Placeholder for the quiz. This will be administered on Moodle, under the “Assessments” tab.</p>
+<p>This week we’re going to be looking at Spatial Joins. We’ll be working with DuckDB (though if you want to work with Postgres/PgAdmin, go ahead!). The notebook below contains some exercises on spatial joins using the NYC data we’ve been working with, as well as an extension that looks at ship-to-ship transfer detection using AIS data.</p>
+<ol type="1">
+<li><a href="https://colab.research.google.com/github/oballinger/CASA0025/blob/main/notebooks/W04_LA.ipynb">Spatial Joins</a></li>
+</ol>
+<section id="spatial-joins-exercises" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Spatial Joins Exercises</h1>
+<p>Here's a reminder of some of the functions we have seen. Hint: they should be useful for the exercises!</p>
+<ul>
+<li><code class="interpreted-text" role="command">sum(expression)</code>: aggregate to return a sum for a set of records</li>
+<li><code class="interpreted-text" role="command">count(expression)</code>: aggregate to return the size of a set of records</li>
+<li><code class="interpreted-text" role="command">ST_Area(geometry)</code> returns the area of the polygons</li>
+<li><code class="interpreted-text" role="command">ST_AsText(geometry)</code> returns WKT <code>text</code></li>
+<li><code class="interpreted-text" role="command">ST_Contains(geometry A, geometry B)</code> returns the true if geometry A contains geometry B</li>
+<li><code class="interpreted-text" role="command">ST_Distance(geometry A, geometry B)</code> returns the minimum distance between geometry A and geometry B</li>
+<li><code class="interpreted-text" role="command">ST_DWithin(geometry A, geometry B, radius)</code> returns the true if geometry A is radius distance or less from geometry B</li>
+<li><code class="interpreted-text" role="command">ST_GeomFromText(text)</code> returns <code>geometry</code></li>
+<li><code class="interpreted-text" role="command">ST_Intersects(geometry A, geometry B)</code> returns the true if geometry A intersects geometry B</li>
+<li><code class="interpreted-text" role="command">ST_Length(linestring)</code> returns the length of the linestring</li>
+<li><code class="interpreted-text" role="command">ST_Touches(geometry A, geometry B)</code> returns the true if the boundary of geometry A touches geometry B</li>
+<li><code class="interpreted-text" role="command">ST_Within(geometry A, geometry B)</code> returns the true if geometry A is within geometry B</li>
+</ul>
+<p>Also remember the tables we have available:</p>
+<ul>
+<li><code>nyc_census_blocks</code>
+<ul>
+<li>name, popn_total, boroname, geom</li>
+</ul></li>
+<li><code>nyc_streets</code>
+<ul>
+<li>name, type, geom</li>
+</ul></li>
+<li><code>nyc_subway_stations</code>
+<ul>
+<li>name, routes, geom</li>
+</ul></li>
+<li><code>nyc_neighborhoods</code>
+<ul>
+<li>name, boroname, geom</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercises" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Exercises</h1>
+<ul>
+<li><p><strong>What subway station is in 'Little Italy'? What subway route is it on?</strong></p></li>
+<li><p><strong>What are all the neighborhoods served by the 6-train?</strong> (Hint: The <code>routes</code> column in the <code>nyc_subway_stations</code> table has values like 'B,D,6,V' and 'C,6')</p></li>
+<li><p><strong>After 9/11, the 'Battery Park' neighborhood was off limits for several days. How many people had to be evacuated?</strong></p></li>
+<li><p><strong>What neighborhood has the highest population density (persons/km2)?</strong></p></li>
+</ul>
+</section>
+<section id="ship-to-ship-transfer-detection" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Ship-to-Ship Transfer Detection</h1>
+<p>Now for a less structured exercise. We’re going to look at ship-to-ship transfers. The idea is that two ships meet up in the middle of the ocean, and one ship transfers cargo to the other. This is a common way to avoid sanctions, and is often used to transfer oil from sanctioned countries to other countries. We’re going to look at a few different ways to detect these transfers using AIS data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="PS_AIS.png" class="img-fluid figure-img"></p>
+<figcaption>Ship-to-Ship Transfer</figcaption>
+</figure>
+</div>
+<section id="step-1" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="step-1"><span class="header-section-number">7.1</span> Step 1</h2>
+<p>Create a spatial database using the following AIS data:</p>
+<p>https://storage.googleapis.com/qm2/casa0025_ships.csv</p>
+<p>Each row in this dataset is an AIS ‘ping’ indicating the position of a ship at a particular date/time, alongside vessel-level characteristics.</p>
+<p>It contains the following columns:</p>
+<ul>
+<li><p><code>vesselid</code>: A unique numerical identifier for each ship, like a license plate</p></li>
+<li><p><code>vessel_name</code>: The ship’s name</p></li>
+<li><p><code>vsl_descr</code>: The ship’s type</p></li>
+<li><p><code>dwt</code>: The ship’s Deadweight Tonnage (how many tons it can carry)</p></li>
+<li><p><code>v_length</code>: The ship’s length in meters</p></li>
+<li><p><code>draught</code>: How many meters deep the ship is draughting (how low it sits in the water). Effectively indicates how much cargo the ship is carrying</p></li>
+<li><p><code>sog</code>: Speed over Ground (in knots)</p></li>
+<li><p><code>date</code>: A timestamp for the AIS signal</p></li>
+<li><p><code>lat</code>: The latitude of the AIS signal (EPSG:4326)</p></li>
+<li><p><code>lon</code>: The longitude of the AIS signal (EPSG:4326)</p></li>
+</ul>
+<p>Create a table called ‘ais’ where each row is a different AIS ping, with no superfluous information. Construct a geometry column.</p>
+<p>Create a second table called ‘vinfo’ which contains vessel-level information with no superfluous information.</p>
+</section>
+<section id="step-2" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="step-2"><span class="header-section-number">7.2</span> Step 2</h2>
+<p>Use a spatial join to identify ship-to-ship transfers in this dataset. Two ships are considered to be conducting a ship to ship transfer IF:</p>
+<ul>
+<li>They are within 500 meters of each other</li>
+<li>For more than two hours</li>
+<li>And their speed is lower than 1 knot</li>
+</ul>
+<p>Some things to consider: make sure you’re not joining ships with themselves. Try working with subsets of the data first while you try different things out.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -872,13 +974,13 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./W04_LA.html" class="pagination-link" aria-label="Spatial SQL II">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial SQL II</span></span>
+      <a href="./W03_HypoTesting.html" class="pagination-link" aria-label="Spatial SQL I">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Spatial SQL I</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./W06_Regression.html" class="pagination-link" aria-label="Remote Sensing">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Remote Sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./W05_Correlation.html" class="pagination-link" aria-label="Quiz">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -887,4 +989,4 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W05_Correlation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W04_LA.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

@@ -1,4 +1,4 @@
-# Blast Damage Assessment
+# Dimension Reduction
 
 On August 4th, 2020, a warehouse full of fertilizer in the port of Beirut exploded. The blast killed over 200 people, injured thousands, and caused widespread damage to the city:
 

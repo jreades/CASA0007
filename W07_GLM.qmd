@@ -1,4 +1,4 @@
-# Refinery Identification 
+# Geneneralised Linear Regression 
 
 *Topics: multispectral satellite imagery, machine learning, informal economies, war.*
 

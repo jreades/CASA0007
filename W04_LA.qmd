@@ -1,8 +1,8 @@
-# Spatial SQL II
+# Introduction to Linear Algebra
 
 This week we're going to be looking at Spatial Joins. We'll be working with DuckDB (though if you want to work with Postgres/PgAdmin, go ahead!). The notebook below contains some exercises on spatial joins using the NYC data we've been working with, as well as an extension that looks at ship-to-ship transfer detection using AIS data.
 
-1. [Spatial Joins](https://colab.research.google.com/github/oballinger/CASA0025/blob/main/notebooks/W04_postgis2.ipynb)
+1. [Spatial Joins](https://colab.research.google.com/github/oballinger/CASA0025/blob/main/notebooks/W04_LA.ipynb)
 
 # Spatial Joins Exercises
 

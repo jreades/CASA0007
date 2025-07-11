@@ -1,4 +1,4 @@
-# Spatial SQL I
+# Hypothesis Testing
 
 ## Introduction
 
