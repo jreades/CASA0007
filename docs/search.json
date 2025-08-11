@@ -1111,7 +1111,7 @@
     "href": "W02_EDA2.html",
     "title": "2  Explanatory Data Analysis II",
     "section": "",
-    "text": "3 Getting Started\nThis week we’ll be learning how to use SQL to query data from a database:\nClicking the link will take you to Google Colab, where you can run the notebook in your browser. You can also download the notebook and run it locally if you prefer.\nOnce you’ve completed this, you can test your knowledge by answering the questions in the lab below. You can also access it on Google Colab here.",
+    "text": "2.1 Introduction\nThis lesson is about coming up with, and testing, research hypotheses.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
@@ -1230,9 +1230,9 @@
   {
     "objectID": "W03_HypoTesting.html",
     "href": "W03_HypoTesting.html",
-    "title": "3  Spatial SQL I",
+    "title": "3  Hypothesis Testing",
     "section": "",
-    "text": "3.1 Introduction\nIn this lesson, you will learn how to use SQL to query spatial data. You will learn how to use the duckdb Python library to connect to a DuckDB database and run SQL queries. You will also learn how to use the leafmap Python library to visualize spatial data.",
+    "text": "3.1 Introduction\nThis lesson is about coming up with, and testing, research hypotheses.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
@@ -1241,9 +1241,9 @@
   {
     "objectID": "W03_HypoTesting.html#learning-objectives",
     "href": "W03_HypoTesting.html#learning-objectives",
-    "title": "3  Spatial SQL I",
+    "title": "3  Hypothesis Testing",
     "section": "3.2 Learning Objectives",
-    "text": "3.2 Learning Objectives\nBy the end of this lesson, you will be able to:\n\nConnect to a DuckDB database using Python\nRun SQL queries to query spatial data\nVisualize spatial data using Leafmap\nRun spatial SQL queries using PgAdmin",
+    "text": "3.2 Learning Objectives\nBy the end of this lesson, you will be able to:\n\nEstablish a hypothesis.\nDefine the Type I and Type II errors.\nCalculate the p-value.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
@@ -1252,9 +1252,9 @@
   {
     "objectID": "W03_HypoTesting.html#materials",
     "href": "W03_HypoTesting.html#materials",
-    "title": "3  Spatial SQL I",
+    "title": "3  Hypothesis Testing",
     "section": "3.3 Materials",
-    "text": "3.3 Materials\nTo get started, work your way through the following two notebooks:\n\nGeometries\nSpatial Relationships\n\nClicking the link will take you to Google Colab, where you can run the notebook in your browser. These workbooks use the duckdb Python library to connect to a DuckDB database and run SQL queries. They also use the leafmap Python library to visualize spatial data. Most of the spatial functions and syntax are the same or very similar to their PostGIS equivalents.\nOnce you’ve completed these you can test your knowledge by answering the questions in the lab below. To complete this lab, open PgAdmin and connect to the nyc database. Then, open a new query window and write your SQL queries there.",
+    "text": "3.3 Materials\nLecture 3 slides\nLecture 3 tutorial",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
@@ -1263,9 +1263,9 @@
   {
     "objectID": "W03_HypoTesting.html#exercises",
     "href": "W03_HypoTesting.html#exercises",
-    "title": "3  Spatial SQL I",
-    "section": "4.1 Exercises",
-    "text": "4.1 Exercises\n\nWhat is the area of the 'West Village' neighborhood? (Hint: The area is given in square meters. To get an area in hectares, divide by 10000. To get an area in acres, divide by 4047.)\nWhat is the geometry type of ‘Pelham St’? The length?\nWhat is the GeoJSON representation of the 'Broad St' subway station?\nWhat is the total length of streets (in kilometers) in New York City? (Hint: The units of measurement of the spatial data are meters, there are 1000 meters in a kilometer.)\nWhat is the area of Manhattan in acres? (Hint: both nyc_census_blocks and nyc_neighborhoods have a boroname in them.)\nWhat is the most westerly subway station?\nHow long is 'Columbus Cir' (aka Columbus Circle)?\nWhat is the length of streets in New York City, summarized by type?\n\nAnswers (only check after you’ve given it your best shot!)",
+    "title": "3  Hypothesis Testing",
+    "section": "3.4 Exercises",
+    "text": "3.4 Exercises",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
@@ -1274,7 +1274,7 @@
   {
     "objectID": "W03_HypoTesting.html#exercises-1",
     "href": "W03_HypoTesting.html#exercises-1",
-    "title": "3  Spatial SQL I",
+    "title": "3  Hypothesis Testing",
     "section": "5.1 Exercises",
     "text": "5.1 Exercises\n\nWhat is the geometry value for the street named 'Atlantic Commons'?\nWhat neighborhood and borough is Atlantic Commons in?\nWhat streets does Atlantic Commons join with?\nApproximately how many people live on (within 50 meters of) Atlantic Commons?\n\nAnswers (only check after you’ve given it your best shot!)",
     "crumbs": [
@@ -1285,9 +1285,9 @@
   {
     "objectID": "W04_LA.html",
     "href": "W04_LA.html",
-    "title": "4  Spatial SQL II",
+    "title": "4  Introduction to Linear Algebra",
     "section": "",
-    "text": "5 Spatial Joins Exercises\nThis week we’re going to be looking at Spatial Joins. We’ll be working with DuckDB (though if you want to work with Postgres/PgAdmin, go ahead!). The notebook below contains some exercises on spatial joins using the NYC data we’ve been working with, as well as an extension that looks at ship-to-ship transfer detection using AIS data.\nHere's a reminder of some of the functions we have seen. Hint: they should be useful for the exercises!\nAlso remember the tables we have available:",
+    "text": "4.1 Introduction\nThis lesson is about the basics of Linear Algebra.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
@@ -1742,6 +1742,138 @@
     "crumbs": [
       "Dimension Reduction & Clustering",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "W03_HypoTesting.html#references",
+    "href": "W03_HypoTesting.html#references",
+    "title": "3  Hypothesis Testing",
+    "section": "3.5 References",
+    "text": "3.5 References",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "W04_LA.html#learning-objectives",
+    "href": "W04_LA.html#learning-objectives",
+    "title": "4  Introduction to Linear Algebra",
+    "section": "4.2 Learning Objectives",
+    "text": "4.2 Learning Objectives\nBy the end of this lesson, you will be able to:\n\nEstablish a hypothesis.\nDefine the Type I and Type II errors.\nCalculate the p-value.",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
+    ]
+  },
+  {
+    "objectID": "W04_LA.html#materials",
+    "href": "W04_LA.html#materials",
+    "title": "4  Introduction to Linear Algebra",
+    "section": "4.3 Materials",
+    "text": "4.3 Materials\nLecture 4 slides\nLecture 4 tutorial",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
+    ]
+  },
+  {
+    "objectID": "W04_LA.html#exercises",
+    "href": "W04_LA.html#exercises",
+    "title": "4  Introduction to Linear Algebra",
+    "section": "4.4 Exercises",
+    "text": "4.4 Exercises",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
+    ]
+  },
+  {
+    "objectID": "W04_LA.html#references",
+    "href": "W04_LA.html#references",
+    "title": "4  Introduction to Linear Algebra",
+    "section": "4.5 References",
+    "text": "4.5 References",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#learning-objectives",
+    "href": "W02_EDA2.html#learning-objectives",
+    "title": "2  Explanatory Data Analysis II",
+    "section": "2.2 Learning Objectives",
+    "text": "2.2 Learning Objectives\nBy the end of this lesson, you will be able to:\n\nEstablish a hypothesis.\nDefine the Type I and Type II errors.\nCalculate the p-value.",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#materials",
+    "href": "W02_EDA2.html#materials",
+    "title": "2  Explanatory Data Analysis II",
+    "section": "2.3 Materials",
+    "text": "2.3 Materials\nLecture 2 slides\nLecture 2 tutorial",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#exercises",
+    "href": "W02_EDA2.html#exercises",
+    "title": "2  Explanatory Data Analysis II",
+    "section": "2.4 Exercises",
+    "text": "2.4 Exercises",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#references",
+    "href": "W02_EDA2.html#references",
+    "title": "2  Explanatory Data Analysis II",
+    "section": "2.5 References",
+    "text": "2.5 References",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W03_HypoTesting.html#further-resources",
+    "href": "W03_HypoTesting.html#further-resources",
+    "title": "3  Hypothesis Testing",
+    "section": "3.5 Further resources",
+    "text": "3.5 Further resources",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#further-resources",
+    "href": "W02_EDA2.html#further-resources",
+    "title": "2  Explanatory Data Analysis II",
+    "section": "2.5 Further resources",
+    "text": "2.5 Further resources",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W04_LA.html#further-resources",
+    "href": "W04_LA.html#further-resources",
+    "title": "4  Introduction to Linear Algebra",
+    "section": "4.5 Further resources",
+    "text": "4.5 Further resources",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Linear Algebra</span>"
     ]
   }
 ]

@@ -1,99 +1,23 @@
 # Explanatory Data Analysis II
 
-# Getting Started
+## Introduction
 
-This week we'll be learning how to use SQL to query data from a database:
+This lesson is about coming up with, and testing, research hypotheses. 
 
-1. [Introduction to SQL](https://colab.research.google.com/github/oballinger/CASA0025/blob/main/notebooks/W02_sql_basics.ipynb)
+## Learning Objectives
 
-Clicking the link will take you to Google Colab, where you can run the notebook in your browser. You can also download the notebook and run it locally if you prefer.
+By the end of this lesson, you will be able to:
 
-Once you've completed this, you can test your knowledge by answering the questions in the lab below. You can also access it on Google Colab [here](https://colab.research.google.com/github/oballinger/CASA0025/blob/main/notebooks/W02_lab.ipynb).
+1. Establish a hypothesis.
+2. Define the Type I and Type II errors.
+3. Calculate the p-value.
 
-# Lab
+## Materials 
 
-**Datasets**:
+[Lecture 2 slides](lecture_slides/L3_HypoTesting.html)
 
-The following datasets are used in this lab. You don't need to download them manually, they can be accessed directly from the notebook.
+[Lecture 2 tutorial](notebooks/W03_hypothesis_testing_practical.ipynb)
 
-- [nyc_subway_stations.tsv](https://open.gishub.org/data/duckdb/nyc_subway_stations.tsv)
-- [nyc_neighborhoods.tsv](https://open.gishub.org/data/duckdb/nyc_neighborhoods.tsv)
+## Exercises 
 
-``` ipython3
-# %pip install duckdb duckdb-engine jupysql
-```
-
-``` ipython3
-import duckdb
-
-%load_ext sql
-```
-
-``` ipython3
-%config SqlMagic.autopandas = True
-%config SqlMagic.feedback = False
-%config SqlMagic.displaycon = False
-```
-
-## Question 1: Creating Tables
-
-Create a database, then write a SQL query to create a table named `nyc_subway_stations` and load the data from the file `nyc_subway_stations.tsv` into it. Similarly, create a table named `nyc_neighborhoods` and load the data from the file `nyc_neighborhoods.tsv` into it.
-
-
-
-## Question 2: Column Filtering
-
-Write a SQL query to display the `ID`, `NAME`, and `BOROUGH` of each subway station in the `nyc_subway_stations` dataset.
-
-
-
-## Question 3: Row Filtering
-
-Write a SQL query to find all subway stations in the `nyc_subway_stations` dataset that are located in the borough of Manhattan.
-
-
-
-## Question 4: Sorting Results
-
-Write a SQL query to list the subway stations in the `nyc_subway_stations` dataset in alphabetical order by their names.
-
-
-
-## Question 5: Unique Values
-
-Write a SQL query to find the distinct boroughs represented in the `nyc_subway_stations` dataset.
-
-
-
-## Question 6: Counting Rows
-
-Write a SQL query to count the number of subway stations in each borough in the `nyc_subway_stations` dataset.
-
-
-
-## Question 7: Aggregating Data
-
-Write a SQL query to list the number of subway stations in each borough, sorted in descending order by the count.
-
-
-
-## Question 8: Joining Tables
-
-Write a SQL query to join the `nyc_subway_stations` and `nyc_neighborhoods` datasets on the borough name, displaying the subway station name and the neighborhood name.
-
-
-
-## Question 9: String Manipulation
-
-Write a SQL query to display the names of subway stations in the `nyc_subway_stations` dataset that contain the word "St" in their names.
-
-
-
-## Question 10: Filtering with Multiple Conditions
-
-Write a SQL query to find all subway stations in the `nyc_subway_stations` dataset that are in the borough of Brooklyn and have routes that include the letter "R".
-
-
-# References 
-
-- [Qiusheng Wu](https://geog-414.gishub.org/)
+## Further resources
