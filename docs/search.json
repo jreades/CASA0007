@@ -1109,12 +1109,12 @@
   {
     "objectID": "W02_EDA2.html",
     "href": "W02_EDA2.html",
-    "title": "2  Explanatory Data Analysis II",
+    "title": "2  A Title for my Slides",
     "section": "",
-    "text": "2.1 Introduction\nThis lesson is about coming up with, and testing, research hypotheses.",
+    "text": "2.1 Hello there 👋\n/* This sits here, because it allows us to use images from within the images/ folder. Otherwise, the file structure gets a lot more involved! */\n.reveal::after {\n  background-image: url('images/light-background.png');\n}\nHere’s a new slide without a title.",
     "crumbs": [
       "A. Basics",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
     ]
   },
   {
@@ -1885,6 +1885,50 @@
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Explanatory Data Analysis II</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#executable-code",
+    "href": "W02_EDA2.html#executable-code",
+    "title": "2  A Title for my Slides",
+    "section": "2.2 Executable Code",
+    "text": "2.2 Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point(size = 5) +  \n  geom_smooth(formula = y ~ x, method = \"loess\",\n              colour = casaviz::casa_colours$pink,\n              fill = casaviz::casa_colours$dark_green, alpha = 0.2) +\n  labs(title = \"Here's a title\",\n       subtitle = \"And also a subtitle, which we'll make quite long mostly for the purposes of demonstrating that the text wraps automatically.\") +\n  casaviz::scale_colour_casa(\"warm_colours\", continuous = TRUE, reverse = TRUE) +\n  casaviz::theme_casa(base_text_size = 16, background = FALSE)",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#section",
+    "href": "W02_EDA2.html#section",
+    "title": "2  A Title for my Slides",
+    "section": "3.1 ",
+    "text": "3.1 \n\n\n\nThese half and half slides only really work with columns\n\nThis slide shows you how to do that.\n\n\n\nThey can be combined with images!\n \n\nAnd you can choose to remove the default footer.",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#media-backgrounds-with-brand-colour",
+    "href": "W02_EDA2.html#media-backgrounds-with-brand-colour",
+    "title": "2  A Title for my Slides",
+    "section": "3.2 Media Backgrounds with brand colour",
+    "text": "3.2 Media Backgrounds with brand colour\nYou can use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\nSetting a dark background colour automatically changes the text formatting to “dark mode”.\n\nLearn more: Media Backgrounds",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
+    ]
+  },
+  {
+    "objectID": "W02_EDA2.html#thank-you",
+    "href": "W02_EDA2.html#thank-you",
+    "title": "2  A Title for my Slides",
+    "section": "3.3 Thank you",
+    "text": "3.3 Thank you\n\n\nThat’s it. Happy presenting!\nFor more tips on making the most of Quarto, use casaviz::create_slides(\"my-file-name\", demo = TRUE).",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
     ]
   }
 ]

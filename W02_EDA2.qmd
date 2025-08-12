@@ -1,26 +1,149 @@
 ---
-title: Explanatory Data Analysis II
-author: Beatrice Taylor
+title: "A Title for my Slides"
+subtitle: "The subtitle for my talk which gives us more information: Discuss"
+author: 
+  - name: "My name"
+email: "myemail@emails.com"
+date-as-string: "12th December 2024"
+other: "Any other information"
+from: markdown+emoji
+format:
+  revealjs: 
+    logo: "images/CASA_logo.svg"
+    template-partials: 
+      - title-slide.html
+    transition: none
+    slide-number: false
+    preview-links: auto
+    theme: casa-slides.scss
+    footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
+filters:
+ - code-visibility
+lightbox: auto
+title-slide-attributes:
+    data-background-image: "images/title-slide.png"
+    data-background-size: stretch
+    data-background-opacity: "0.08"
+    data-background-color: "#4e3c56"
+
 ---
 
-## Introduction
+## Hello there :wave: {transition="convex-in none-out" transition-speed="fast"}
 
-This lesson is about coming up with, and testing, research hypotheses. 
 
-## Learning Objectives
+```{r, echo=FALSE}
+# This makes the fonts play nicely within the figures
+knitr::opts_chunk$set(dev = "ragg_png")
 
-By the end of this lesson, you will be able to:
+```
 
-1. Establish a hypothesis.
-2. Define the Type I and Type II errors.
-3. Calculate the p-value.
+```{css}
+/* This sits here, because it allows us to use images from within the images/ folder. Otherwise, the file structure gets a lot more involved! */
+.reveal::after {
+  background-image: url('images/light-background.png');
+}
+```
 
-## Materials 
+--- 
 
-[Lecture 2 slides](https://github.com/Bea-Taylor/CASA007_lectures/blob/main/L3_hypothesis_testing.html)
+Here's a new slide without a title.
 
-[Lecture 2 tutorial](notebooks/W03_hypothesis_testing_practical.ipynb)
+---
 
-## Exercises 
+## Executable Code
 
-## Further resources
+```{r}
+#| echo: true
+#| fig-height: 9
+#| output-location: column
+#| code-line-numbers: "9-10"
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg, color = am)) +
+  geom_point(size = 5) +  
+  geom_smooth(formula = y ~ x, method = "loess",
+              colour = casaviz::casa_colours$pink,
+              fill = casaviz::casa_colours$dark_green, alpha = 0.2) +
+  labs(title = "Here's a title",
+       subtitle = "And also a subtitle, which we'll make quite long mostly for the purposes of demonstrating that the text wraps automatically.") +
+  casaviz::scale_colour_casa("warm_colours", continuous = TRUE, reverse = TRUE) +
+  casaviz::theme_casa(base_text_size = 16, background = FALSE)
+```
+
+# Here's a section title slide {background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/wysiwyg_large_desktop/public/city_of_women.jpg.webp?itok=D7f1ilzC" background="#2e6260" background-opacity=0.1}
+
+You can change the image, and overlay any colour you like, and play around with the opacity to achieve a goo. 
+
+To choose an on-brand colour, use one of the `casaviz::casa_colours`!
+
+## {.half-and-half}
+
+:::{.columns}
+
+:::{.column width=45%}
+
+<h2>These half and half slides only really work with columns</h2>
+
+
+This slide shows you how to do that.
+
+:::
+
+:::{.column width=10%}
+
+:::
+
+:::{.column width=45%}
+
+They can be combined with images! 
+
+<br>
+<br>
+
+![](https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/large_laptop_16_9/public/about-cropped-off-white.png.webp?itok=rarZuf5j)
+
+And you can choose to remove the default footer. 
+:::
+
+:::
+
+::: footer
+:::
+
+
+## Media Backgrounds with brand colour {background="#4e3c56" background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/department_hero_laptop/public/dirk_krolikowski_spatial_tectonic_0.jpg.webp?itok=LchrWxlf" background-opacity="0.1"}
+
+You can use the following as a slide background:
+
+- An image: `background-image`
+- A video: `background-video`
+- An iframe: `background-iframe`
+
+Setting a dark background colour automatically changes the text formatting to "dark mode".
+
+::: footer
+Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#image-backgrounds)
+:::
+
+## Thank you {background-image="images/title-slide.png" background-color="#0F0C11" background-opacity="0.2"}
+
+:::{.columns}
+
+:::{.column}
+
+That's it. Happy presenting! 
+
+For more tips on making the most of Quarto, use `casaviz::create_slides("my-file-name", demo = TRUE)`.
+
+:::
+
+:::{.column}
+
+<center>
+
+<img src="images/CASA_logo.svg" style="filter: drop-shadow(0px 0px 1px #F6F5F6);">
+
+</center>
+
+:::
+
+:::

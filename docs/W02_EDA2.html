@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Beatrice Taylor">
+<meta name="author" content="My name">
 
-<title>2&nbsp; Explanatory Data Analysis II – CASA0007: 
+<title>2&nbsp; A Title for my Slides – CASA0007: 
  Quantitative Methods</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -46,6 +80,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9da5c79871f7304987118a62e6bdfd0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-f69388bb9b5b3b37de49aa2d4ba5dbf2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -95,7 +132,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W02_EDA2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W02_EDA2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Title for my Slides</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -187,7 +224,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./W02_EDA2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Title for my Slides</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,20 +309,24 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">2.2</span> Learning Objectives</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">2.3</span> Materials</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.4</span> Exercises</a></li>
-  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources"><span class="header-section-number">2.5</span> Further resources</a></li>
+  <li><a href="#hello-there" id="toc-hello-there" class="nav-link active" data-scroll-target="#hello-there"><span class="header-section-number">2.1</span> Hello there <span class="emoji" data-emoji="wave">👋</span></a></li>
+  <li><a href="#executable-code" id="toc-executable-code" class="nav-link" data-scroll-target="#executable-code"><span class="header-section-number">2.2</span> Executable Code</a></li>
+  <li><a href="#heres-a-section-title-slide" id="toc-heres-a-section-title-slide" class="nav-link" data-scroll-target="#heres-a-section-title-slide"><span class="header-section-number">3</span> Here’s a section title slide</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3.1</span> </a></li>
+  <li><a href="#media-backgrounds-with-brand-colour" id="toc-media-backgrounds-with-brand-colour" class="nav-link" data-scroll-target="#media-backgrounds-with-brand-colour"><span class="header-section-number">3.2</span> Media Backgrounds with brand colour</a></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you"><span class="header-section-number">3.3</span> Thank you</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W02_EDA2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W02_EDA2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W01_EDA1.html">A. Basics</a></li><li class="breadcrumb-item"><a href="./W02_EDA2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Title for my Slides</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Title for my Slides</span></h1>
+<p class="subtitle lead">The subtitle for my talk which gives us more information: Discuss</p>
 </div>
 
 
@@ -295,7 +336,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Beatrice Taylor </p>
+             <p>My name </p>
           </div>
   </div>
     
@@ -308,31 +349,99 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>This lesson is about coming up with, and testing, research hypotheses.</p>
+<section id="hello-there" class="level2" data-transition="convex-in none-out" data-transition-speed="fast" data-number="2.1">
+<h2 data-transition="convex-in none-out" data-transition-speed="fast" data-number="2.1" class="anchored" data-anchor-id="hello-there"><span class="header-section-number">2.1</span> Hello there <span class="emoji" data-emoji="wave">👋</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* This sits here, because it allows us to use images from within the images/ folder. Otherwise, the file structure gets a lot more involved! */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.reveal</span><span class="in">::after</span> {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-image</span><span class="ch">:</span> <span class="fu">url(</span><span class="st">'images/light-background.png'</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+/* This sits here, because it allows us to use images from within the images/ folder. Otherwise, the file structure gets a lot more involved! */
+.reveal::after {
+  background-image: url('images/light-background.png');
+}
+</style>
+</div>
+<hr>
+<p>Here’s a new slide without a title.</p>
+<hr>
 </section>
-<section id="learning-objectives" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.2</span> Learning Objectives</h2>
-<p>By the end of this lesson, you will be able to:</p>
-<ol type="1">
-<li>Establish a hypothesis.</li>
-<li>Define the Type I and Type II errors.</li>
-<li>Calculate the p-value.</li>
-</ol>
+<section id="executable-code" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="executable-code"><span class="header-section-number">2.2</span> Executable Code</h2>
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span>  </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>              <span class="at">colour =</span> casaviz<span class="sc">::</span>casa_colours<span class="sc">$</span>pink,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>              <span class="at">fill =</span> casaviz<span class="sc">::</span>casa_colours<span class="sc">$</span>dark_green, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Here's a title"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8"></a>       <span class="at">subtitle =</span> <span class="st">"And also a subtitle, which we'll make quite long mostly for the purposes of demonstrating that the text wraps automatically."</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  casaviz<span class="sc">::</span><span class="fu">scale_colour_casa</span>(<span class="st">"warm_colours"</span>, <span class="at">continuous =</span> <span class="cn">TRUE</span>, <span class="at">reverse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  casaviz<span class="sc">::</span><span class="fu">theme_casa</span>(<span class="at">base_text_size =</span> <span class="dv">16</span>, <span class="at">background =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="W02_EDA2_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="W02_EDA2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="materials" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="materials"><span class="header-section-number">2.3</span> Materials</h2>
-<p><a href="lecture_slides/L3_HypoTesting.html">Lecture 2 slides</a></p>
-<p><a href="notebooks/W03_hypothesis_testing_practical.ipynb">Lecture 2 tutorial</a></p>
+<section id="heres-a-section-title-slide" class="level1" data-background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/wysiwyg_large_desktop/public/city_of_women.jpg.webp?itok=D7f1ilzC" data-background="#2e6260" data-background-opacity="0.1" data-number="3">
+<h1 data-background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/wysiwyg_large_desktop/public/city_of_women.jpg.webp?itok=D7f1ilzC" data-background="#2e6260" data-background-opacity="0.1" data-number="3"><span class="header-section-number">3</span> Here’s a section title slide</h1>
+<p>You can change the image, and overlay any colour you like, and play around with the opacity to achieve a goo.</p>
+<p>To choose an on-brand colour, use one of the <code>casaviz::casa_colours</code>!</p>
+<section id="section" class="level2 half-and-half" data-number="3.1">
+<h2 class="half-and-half anchored" data-number="3.1" data-anchor-id="section"><span class="header-section-number">3.1</span> </h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<h2 class="anchored">
+These half and half slides only really work with columns
+</h2>
+<p>This slide shows you how to do that.</p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p>They can be combined with images!</p>
+<p><br> <br></p>
+<p><a href="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/large_laptop_16_9/public/about-cropped-off-white.png.webp?itok=rarZuf5j" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/large_laptop_16_9/public/about-cropped-off-white.png.webp?itok=rarZuf5j" class="img-fluid"></a></p>
+<p>And you can choose to remove the default footer.</p>
+</div>
+</div>
+<div class="footer">
+
+</div>
 </section>
-<section id="exercises" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.4</span> Exercises</h2>
+<section id="media-backgrounds-with-brand-colour" class="level2" data-background="#4e3c56" data-background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/department_hero_laptop/public/dirk_krolikowski_spatial_tectonic_0.jpg.webp?itok=LchrWxlf" data-background-opacity="0.1" data-number="3.2">
+<h2 data-background="#4e3c56" data-background-image="https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/department_hero_laptop/public/dirk_krolikowski_spatial_tectonic_0.jpg.webp?itok=LchrWxlf" data-background-opacity="0.1" data-number="3.2" class="anchored" data-anchor-id="media-backgrounds-with-brand-colour"><span class="header-section-number">3.2</span> Media Backgrounds with brand colour</h2>
+<p>You can use the following as a slide background:</p>
+<ul>
+<li>An image: <code>background-image</code></li>
+<li>A video: <code>background-video</code></li>
+<li>An iframe: <code>background-iframe</code></li>
+</ul>
+<p>Setting a dark background colour automatically changes the text formatting to “dark mode”.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#image-backgrounds">Media Backgrounds</a></p>
+</div>
 </section>
-<section id="further-resources" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="further-resources"><span class="header-section-number">2.5</span> Further resources</h2>
+<section id="thank-you" class="level2" data-background-image="images/title-slide.png" data-background-color="#0F0C11" data-background-opacity="0.2" data-number="3.3">
+<h2 data-background-image="images/title-slide.png" data-background-color="#0F0C11" data-background-opacity="0.2" data-number="3.3" class="anchored" data-anchor-id="thank-you"><span class="header-section-number">3.3</span> Thank you</h2>
+<div class="columns">
+<div class="column">
+<p>That’s it. Happy presenting!</p>
+<p>For more tips on making the most of Quarto, use <code>casaviz::create_slides("my-file-name", demo = TRUE)</code>.</p>
+</div><div class="column">
+<center>
+<p><img src="images/CASA_logo.svg" style="filter: drop-shadow(0px 0px 1px #F6F5F6);"></p>
+</center>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -910,8 +1019,40 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W02_EDA2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W02_EDA2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>

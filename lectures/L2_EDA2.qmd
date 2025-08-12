@@ -1,0 +1,361 @@
+---
+title: "Exploratory Data Analysis 2"
+author: 
+  - name: "Beatrice Taylor"
+email: "beatrice.taylor@ucl.ac.uk"
+date-as-string: "12th December 2024"
+from: markdown+emoji
+format:
+  revealjs: 
+    logo: "images/CASA_logo.svg"
+    template-partials: 
+      - title-slide.html
+    transition: none
+    slide-number: false
+    preview-links: auto
+    theme: casa-slides.scss
+    footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
+filters:
+ - code-visibility
+lightbox: auto
+title-slide-attributes:
+    data-background-image: "images/title-slide.png"
+    data-background-size: stretch
+    data-background-opacity: "0.08"
+    data-background-color: "#4e3c56"
+---
+
+# Key Information 
+
++:------------------------+:------------------------------+
+| **Module Lead**         |  **Contact**                  |
++=========================+===============================+
+| Prof. Adam Dennett      |  a.dennett[at]ucl.ac.uk       |
+| Dr. Huanfa Chen         |  huanfa.chen[at]ucl.ac.uk.    |
+| Dr. Beatrice Taylor     |  beatrice.taylor[at]ucl.ac.uk |
++-------------------------+-------------------------------+
+| **PGTAs**               |                               |
++-------------------------+-------------------------------+
+|  ,                      |  Slack                        |
+|  ,                      |                               |
+|                         |                               |
++-------------------------+-------------------------------+
+
+# Last week
+
+## Overview of lecture 1
+
+Looked at data analysis. Different types of data. 
+
+# This week 
+
+## First things first
+
+Exploratory data analysis is the first step of any data science project 
+
+::: {.notes}
+link to scientific process and how we iterate over ideas and concepts 
+:::
+
+## Introducing statistical concepts 
+
+This lecture looking at statistical concepts. 
+
+Data science is about using ideas from statistics to describe large datasets 
+
+Here looking to describe numerical data – focus on probability distributions. 
+
+
+## Learning Objectives
+By the end of this lecture you should:
+
+1. Evaluate whether a dataset is representative. 
+2. Define the probability density function. 
+3. Identify common probability distributions. 
+
+# Motivation 
+
+## What is the likelihood of events occuring? 
+::: {.incremental}
+- What is the probability of someone in this lecture theatre being over 6ft?
+- Need to first understand the distribution of heights. 
+:::
+
+::: {.notes}
+This week thinking about the distribution of data. 
+
+Next week, thinking about formulating and answering the research question. 
+:::
+
+# Random Sampling 
+
+## The dream vs reality 
+Ideally, we would like all the relevant data – but in reality normally have a subset 
+
+::: {.notes}
+It would be great if I knew the height of every adult in the UK, but unrealistic to collect – however maybe I could collect all adults at UCL. 
+:::
+
+## Approximating 
+Expect what happens in the sample to approximate what happens in the whole population. 
+
+# Is the data representative? 
+
+## Bias
+
+It's important to understand if your dataset truly representative or is it susceptible to bias? 
+
+## Cognitive bias 
+
+[*Systematic patterns in how we think about, and perceive, the world.*]{style="color:#49a0c4"} 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+We all have cognitive biases. 
+
+These can impact our research, in particular dataset collection, selection and processing. 
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+![](https://www.ucl.ac.uk/bartlett/sites/bartlett/files/styles/large_laptop_16_9/public/about-cropped-off-white.png.webp?itok=rarZuf5j)
+
+:::
+
+::::
+
+## Why is this important? 
+
+If we're not careful we can propagate bias to the reserach, and hence results. 
+
+This can lead to incorrect conclusions. 
+
+## Types of bias 
+
+Examples of dataset bias include historical bias and selection bias.
+
+## Historical bias
+[*Reflects existing, real world, inequalities*]{style="color:#49a0c4"} 
+
+Examples: 
+
+- [Police profiling](https://www.amnesty.org.uk/press-releases/uk-police-forces-supercharging-racism-crime-predicting-tech-new-report) 
+- [Hungry judges](https://en.wikipedia.org/wiki/Hungry_judge_effect)
+
+## Selection bias 
+[*When the sample chosen doesn’t represent the whole population of interest*]{style="color:#49a0c4"} 
+
+This can be due to not having an adequately random sample. 
+
+Example: 
+
+- The health of people in hospital is worse than the general population. 
+
+Or self-selection bias, where the people who contribute to the data exhibit specific attributes.  
+
+Example:
+
+- WEIRD study. 
+
+## Can data ever be truly representative? 
+Probably not. 
+
+## Failing that 
+
+- Acknowledge our biases!
+
+# Normal Distribution 
+
+## Everywhere you look
+
+::: {.incremental}
+- Human height
+- Happiness
+- Petal size
+:::
+
+## The distribution we're all familiar with 
+
+::: {.incremental}
+- Symmetrical
+- Single peak 
+- Smooth tails on both sides
+:::
+
+## Uniquely described by two equations 
+
+Mean: 
+```{=tex}
+\begin{align}
+E[x]
+\end{align}
+```
+
+Standard deviation: 
+```{=tex}
+\begin{align}
+E[x]
+\end{align}
+```
+
+## and a probability distribution function
+[*Probability density function (PDF) describes the likelihood of different outcomes for a random variable*]{style="color:#49a0c4"} 
+
+The PDF of the normal distribution is: 
+```{=tex}
+\begin{align}
+E[x]
+\end{align}
+```
+
+## Key features 
+
+::: {.incremental}
+- Characteristic size (all data points close to the mean): symmetric and single peak
+- Data is equally likely to be larger or smaller than average (symmetric): Smooth tails on both sides
+- Data is continuous (it is something you measure not something you count) 
+:::
+
+## Sampling distributions 
+
+Note importance of sampling distributions. 
+
+In the case of the normal distribution: Std represented by σ vs std represented by σ/√n
+
+## Example: distance to school 
+
+## Not everything is normal 
+Many real world datasets are *approximately* normally distributed.
+
+But not all, things might not have a characteristic size, or not continuous, or not symmetric 
+
+# More generally, what is a probability distribution? 
+
+## Continous vs. Discrete 
+
+## Back to the probability density function 
+Why it’s useful – see next week, allows us to evaluate the probability of events, and hence evaluate hypotheses 
+
+## Sampling distributions 
+Specific for different probability distributions (/n)
+
+## Skewed and long tails 
+In reality, few things are actually normal. 
+[Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)
+
+# Binomial distribution 
+
+## Coin toss 
+- If I flip a coin 10 times, how often can I expect to get at least 7 heads? 
+- Describes the frequency of successes in a test with 2 outcomes 
+
+# Poisson distribution 
+
+## Death by horse kicks 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+- It's 1894. 
+- You're the statistician Ladislaus Bortkiewicz.
+- And you're wondering, 
+- How many soldiers in the Prussian army have been killed by horse kicks?
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](L2_images/horse_kicks.jpeg)
+
+:::
+
+::::
+
+## Measuring rare events
+
+::: {.incremental}
+- Imagine a situation where certain rare events (like arrival of mail) can occur in an **independent** fashion. 
+- The Poisson distribution estimates how many such events are expected within a time interval
+- Fixed interval (e.g. one minute)
+- Fixed rate of events (λ) (e.g. 4 cars per minute, λ = 4)
+-	Events occur independently.
+-	Poisson Distribution gives the probability of k events.
+:::
+
+## Probability density function 
+
+# Exponentials and Logarithms 
+
+## Exponentials
+
+If the Poisson measures the probability of x events within a time period, then the Exponential measures how long we are likely to wait between events.
+
+---
+
+[*The greatest shortcoming of the human race is our inability to understand the exponential function*]{style="color:#49a0c4"} – Albert Bartlett (physicist)
+
+---
+
+## At it like rabbits 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+Rapid growth of rabbit populations 
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](L2_images/rabbits.jpeg)
+
+:::
+
+::::
+
+
+## Estimating rabbit populations
+Allows us to answer questions like: "how many rabbits at t=10?"
+
+Answering questions like “Or when will the rabbit population=250?” 
+
+This is easier said than done – the best way is to invert the equation – this requires 
+
+. . . 
+
+## Logarithms 
+- It is an inverse operation. Multiply and divide are inverse operations of one another (they reverse the process) 
+
+# Overview 
+We've covered: 
+
+- Representative data 
+- Normal distribution
+- Binomial distribution 
+- Poisson distribution 
+- Exponetials 
+- Logarithms 
+
+
+# Practical 
+Practical will focus on plotting and generating sumamry statistics for data following a range of probability distributions. 
+
+. . .
+
+Have questions prepared!
