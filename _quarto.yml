@@ -20,7 +20,7 @@ book:
         - W06_Regression.qmd
         - W07_GLM.qmd
         - W08_MLReg.qmd
-    - part: "Dimension Reduction & Clustering"
+    - part: "C. Dimension Reduction & Clustering"
       chapters:
         - W09_DR.qmd
         - W10_Clustering.qmd
