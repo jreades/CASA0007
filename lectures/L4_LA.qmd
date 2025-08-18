@@ -1,0 +1,67 @@
+---
+title: "Linear Algebra"
+author: 
+  - name: "Beatrice Taylor"
+email: "beatrice.taylor@ucl.ac.uk"
+date-as-string: "12th December 2024"
+from: markdown+emoji
+format:
+  revealjs: 
+    logo: "images/CASA_logo.svg"
+    template-partials: 
+      - title-slide.html
+    transition: none
+    slide-number: false
+    preview-links: auto
+    theme: casa-slides.scss
+    footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
+filters:
+ - code-visibility
+lightbox: auto
+title-slide-attributes:
+    data-background-image: "images/title-slide.png"
+    data-background-size: stretch
+    data-background-opacity: "0.08"
+    data-background-color: "#4e3c56"
+---
+
+# Key Information 
+
++:------------------------+:------------------------------+
+| **Module Lead**         |  **Contact**                  |
++=========================+===============================+
+| Prof. Adam Dennett      |  a.dennett[at]ucl.ac.uk       |
+| Dr. Huanfa Chen         |  huanfa.chen[at]ucl.ac.uk.    |
+| Dr. Beatrice Taylor     |  beatrice.taylor[at]ucl.ac.uk |
++-------------------------+-------------------------------+
+| **PGTAs**               |                               |
++-------------------------+-------------------------------+
+|  ,                      |  Slack                        |
+|  ,                      |                               |
+|                         |                               |
++-------------------------+-------------------------------+
+
+# Last week
+
+## Overview of lecture 2
+
+Looked at data analysis.
+
+# This week 
+
+## Hypothesising 
+
+Research science is about coming up with hypotheses and evaluating them.
+
+::: {.notes}
+This lecture thinking about posing and answering reserach questions. 
+
+I have this great idea - considering the data is this idea plausibly true?
+:::
+
+## Learning Objectives
+By the end of this lecture you should:
+
+1. Establish a hypothesis.
+2. Define the Type I and Type II errors. -	Define the Type I and Type II errors. 
+3. Calculate the p-value.
