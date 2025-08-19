@@ -1593,12 +1593,12 @@
   {
     "objectID": "W09_DR.html",
     "href": "W09_DR.html",
-    "title": "9  Blast Damage Assessment",
+    "title": "9  Dimensionality redcution",
     "section": "",
-    "text": "9.1 Change Detection\nOn August 4th, 2020, a warehouse full of fertilizer in the port of Beirut exploded. The blast killed over 200 people, injured thousands, and caused widespread damage to the city:\nNASA used Sentinel-1 imagery in the aftermath of the explosion to generate an estimated damage map. They explain that Sentinel-1 Synthetic Aperture Radar (SAR) imagery is good for this sort of task:\n“SAR instruments send pulses of microwaves toward Earth’s surface and listen for the reflections of those waves. The radar waves can penetrate cloud cover, vegetation, and the dark of night to detect changes that might not show up in visible light imagery. When Earth’s crust moves due to an earthquake, when dry land is suddenly covered by flood water, or when buildings have been damaged or toppled, the amplitude and phase of radar wave reflections changes in those areas and indicates to the satellite that something on the ground has changed.”\nThe NASA team produced this estimate the day after the explosion, which is very impressive. However, due to the quick turnaround, were pretty light on the description of their methodology (they didnt provide any code, or even explicity say how exactly they generated the estimate), making their analysis hard to replicate. They also failed to validate their results, which is a critical step in any analysis.\nIn this case study we’ll be developing our own change detection algorithm from scratch, applying to Sentinel-1 imagery of Beirut before and after the blast, and validating our results using building footprints and U.N. damage estimates as the ground truth. Below is the final result of the analysis, which shows building footprints colored according to the predicted level of damage they sustained from the blast:\nThere are many ways to detect change between two images. The simplest way would be to take an image taken before an event, and subtract it from an image taken after. This is a good way to get a general sense of where change has occurred, but if you only use two images (one before an event and another after), it would be difficult to differentiate between areas that have changed as a result of the event in question, and areas that have changed for other reasons. Things in Beirut (and cities in general) are constantly changing: construction, cars/planes/ships moving, vegetation growing, etc. So we wouldn’t know if the change we’re seeing is a result of the explosion or whether that area is generally prone to change. We can overcome this by comparing a bunch of pre-event images to a bunch of post-event images. This way we can see if the change we’re seeing is consistent across all of the images. If it is, then we can be fairly confident that the change is a result of the event in question. The mean is simply the sum of all the values (\\(x_i\\)) in a set divided by the number of values (\\(n\\)):\n\\[\\large \\overline{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\nBut if we just take the average pixel value before and subtract the average pixel value after, we’re not accounting for the variability of that pixel’s values. For example, if we have a pixel that has had an average value of 1 for the month before the event, and a value of 2 in the month after the event, the difference is 1. If that pixel’s value is extremely consistent (it never varies by more than 0.1), such a change would be very significant. But if that pixel’s value is very variable (it varies by 2 or even 3 on a regular basis), then the change is not significant. So we need to account for the variability of the pixel’s values using the standard deviation. It is calculated as the square root of the variance, which is the average of the squared differences from the mean:\n\\[\\large s = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\overline{x})^2}\\]\nWith just the mean and the standard deviations of two sets of numbers, we can use a statistical test to determine whether the change in means is significant. The simplest way to do this is to use a pixelwise t-test, which is basically just a signal-to-noise ratio: it calculates the difference between two sample means (signal), and divides it by the standard deviations of both samples (noise). In this case, the two samples are the pre- and post-event images. The t-test is applied to each pixel in the image, allowing us to determine whether the change is statistically significant. Given two groups, \\(x_1\\) before the event, and \\(x_2\\) after the event, the \\(t\\) statistic is calculated as:\n\\[ \\Large t = {\\frac{\\overline{x_1}-\\overline{x_2}} {\\sqrt{\\frac{s^2_1}{n_1} + \\frac{s^2_2}{n_2}}}} \\]\nWhere:\nThis procedure gives us a number called a t-value, which is a measure of how many standard deviations the difference between the two means is. We’re not going to get into the details here, but a rule of thumb is that if the t-value is greater than 2, then the difference between the two means is significant. If the t-value is less than 2, then the difference is not significant. We’re going to calculate the t-value for each pixel in the image to determine whether that pixel has changed significantly following the event in question. You don’t need to know the details of the t-test to understand the results (but hopefully you’ve got an intuition for what it’s doing). If you’re interested in learning more about statistical tests of this sort, I teach a course on Data Science at the University College London, and have made all of the lectures and courseware open-source. The T-test lecture is here.",
+    "text": "9.1 Introduction\nThis week is about conducting dimensionality reduction on high-dimensional datasets.",
     "crumbs": [
-      "Dimension Reduction & Clustering",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimension Reduction</span>"
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimensionality redcution</span>"
     ]
   },
   {
@@ -1659,12 +1659,12 @@
   {
     "objectID": "W10_Clustering.html",
     "href": "W10_Clustering.html",
-    "title": "10  Clustering",
+    "title": "10  Clustering analysis",
     "section": "",
-    "text": "10.1 How it Works\nThere’s a huge amount of data available on the internet about ship movements, most of which draw on the Automatic Identification System (AIS) which is a system that uses radio to broadcast the identity, position, course, speed, and other data about ships. MarineTraffic, for example, provides an API that allows you to query the location of ships in real time as well as historical vessel tracks and lots of other useful data. Unfortunately most sources of AIS data are paywalled, and AIS can be turned off or manipulated to hide the identity or position of the ship. In fact, most of the stuff we’re interested in investigating probably happens when AIS is turned off.\nThough ships can hide by turning off their AIS transponders, they can’t hide from satellites. In this tutorial, we’re going to build an application that uses Synthetic Aperture Radar (SAR) from the European Space Agency’s Sentinel-1 satellite to automatically identify ships, regardless of whether they’ve got their transponders turned on or off. Here’s the finished application:\nThe app has two main panels:\nThe control panel has a date slider that allows the user to load imagery from a particular year. Below that is a graph that shows the number of ships detected over time within that year. A slider underneath the graph lets us toggle the sensitivity of the ship detection process. Finally, a button at the bottom lets the user draw their own area of interest on the map, and the app will automatically detect ships within that area.\nThe map panel visualizes the results of the ship detection process and has three layers. The bottom layer is the Sentinel-1 image that we’re using to detect ships; it’s blue/purple, and if you zoom in and look closley you can see bright specks in the sea, which are ships. When Sentinel-1 sends a pulse of radio waves onto a flat surface like the sea, there is very little to reflect the waves back to the satellite– they just bounce off into space. A low return signal means we’ll see a darker color on our map. But when the raio waves hit a ship they are reflected back to the satelite and generate a higher return signal, and therefore a much brighter color. The second layer on the map displays a bunch of green points; each one of these is a detected ship. The last layer shows the red outline of the area of interest that the user drew on the map. You can zoom in on the map by holding down the command button and scrolling up and down.\nWhen the application is first loaded it is centered on an area just north of the Suez Canal, and is analyzing imagery from 2021. We can see a bunch of green dots in the AOI, which is the main waiting area for ships waiting to transit the canal. It’s a bit crowded because it’s visualizing all of the ships detected in the entire year. We can display imagery from a single day by clicking on a point in the graph on the left, which you will notice displays a huge spike in the number of ships detected around March.\nYou might remember that on March 23rd, 2021, the Ever Given– a 400m long container ship– got stuck in the Suez Canal. The ship was blocking the canal for six days, and it’s estimated that it cost the global economy $400 million per day. If you click on the tip of the spike on March 30th, you can see backup of around 150 ships waiting for the canal to be cleared. You can also zoom in on a particular date range by scrolling and dragging on the graph. If you zoom in on the spike, you can then select imagery from early April to compare the number of ships in the waiting area after the blockage was cleared. In normal times we can see a regular pattern in the number of ships in the waiting area ranging between 15 and 40 ships.\nIf you’re closely zoomed in to the map and load imagery from different days by clicking on the graph, you can compare the bright spots on the Sentinel image and the green dots. The ship detection process is pretty accurate, and we typically see one green dot per ship. However, you may notice that we occasionally miss a ship. This is because the ship detection process is based on a threshold, and if the ship is too small it may not generate a high enough return signal to be detected. You can increase the sensitivity of the ship detection process by moving the slider below the graph. This will increase the number of ships detected, but it may also increase the number of false positives.\nThe next section focuses on building this application. After that, we’ll have a look at a few different use cases for this sort of maritime surveillance.",
+    "text": "10.1 Introduction\nThis week is about conducting clustering analysis to identify groups within data records.",
     "crumbs": [
       "C. Dimension Reduction & Clustering",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
     ]
   },
   {
@@ -1973,6 +1973,94 @@
     "crumbs": [
       "B. Correlation and Regression",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
+    ]
+  },
+  {
+    "objectID": "W09_DR.html#learning-objectives",
+    "href": "W09_DR.html#learning-objectives",
+    "title": "9  Dimensionality redcution",
+    "section": "9.2 Learning Objectives",
+    "text": "9.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nTBC.\nTBC.\nTBC.",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimensionality redcution</span>"
+    ]
+  },
+  {
+    "objectID": "W09_DR.html#materials",
+    "href": "W09_DR.html#materials",
+    "title": "9  Dimensionality redcution",
+    "section": "9.3 Materials",
+    "text": "9.3 Materials\nLecture 9 slides\nLecture 9 tutorial",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimensionality redcution</span>"
+    ]
+  },
+  {
+    "objectID": "W09_DR.html#exercises",
+    "href": "W09_DR.html#exercises",
+    "title": "9  Dimensionality redcution",
+    "section": "9.4 Exercises",
+    "text": "9.4 Exercises",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimensionality redcution</span>"
+    ]
+  },
+  {
+    "objectID": "W09_DR.html#further-resources",
+    "href": "W09_DR.html#further-resources",
+    "title": "9  Dimensionality redcution",
+    "section": "9.5 Further resources",
+    "text": "9.5 Further resources",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Dimensionality redcution</span>"
+    ]
+  },
+  {
+    "objectID": "W10_Clustering.html#learning-objectives",
+    "href": "W10_Clustering.html#learning-objectives",
+    "title": "10  Clustering analysis",
+    "section": "10.2 Learning Objectives",
+    "text": "10.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nTBC.\nTBC.\nTBC.",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
+    ]
+  },
+  {
+    "objectID": "W10_Clustering.html#materials",
+    "href": "W10_Clustering.html#materials",
+    "title": "10  Clustering analysis",
+    "section": "10.3 Materials",
+    "text": "10.3 Materials\nLecture 10 slides\nLecture 10 tutorial",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
+    ]
+  },
+  {
+    "objectID": "W10_Clustering.html#exercises",
+    "href": "W10_Clustering.html#exercises",
+    "title": "10  Clustering analysis",
+    "section": "10.4 Exercises",
+    "text": "10.4 Exercises",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
+    ]
+  },
+  {
+    "objectID": "W10_Clustering.html#further-resources",
+    "href": "W10_Clustering.html#further-resources",
+    "title": "10  Clustering analysis",
+    "section": "10.5 Further resources",
+    "text": "10.5 Further resources",
+    "crumbs": [
+      "C. Dimension Reduction & Clustering",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
     ]
   }
 ]
