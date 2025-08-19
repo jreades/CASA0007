@@ -42,12 +42,12 @@
   {
     "objectID": "W01_EDA1.html",
     "href": "W01_EDA1.html",
-    "title": "1  Explanatory Data Analysis I",
+    "title": "1  Exploratory data analysis I",
     "section": "",
-    "text": "1.1 DuckDB\nA database management system (DBMS) allows users to store, insert, delete, and update information in a database. Spatial databases go a step further because they record data with geographic coordinates.\nFrom Esri Geodatabase to PostGIS, spatial databases have quickly become the primary method of managing spatial data.\nTo learn more about spatial databases, check out the resources below:\nDuckDB is an in-process SQL OLAP database management system. It is designed to be used as an embedded database in applications, but it can also be used as a standalone SQL database.\nDuckDB is a great option if you’re looking for a serverless data analytics database management system.",
+    "text": "1.1 Introduction\nThis week is about measuring TBC.",
     "crumbs": [
       "A. Basics",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Explanatory Data Analysis I</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
     ]
   },
   {
@@ -2061,6 +2061,50 @@
     "crumbs": [
       "C. Dimension Reduction & Clustering",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Clustering analysis</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#learning-objectives",
+    "href": "W01_EDA1.html#learning-objectives",
+    "title": "1  Exploratory data analysis I",
+    "section": "1.2 Learning Objectives",
+    "text": "1.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nTBC.\nTBC.\nTBC.",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#materials",
+    "href": "W01_EDA1.html#materials",
+    "title": "1  Exploratory data analysis I",
+    "section": "1.3 Materials",
+    "text": "1.3 Materials\nLecture 1 slides\nLecture 1 tutorial",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#exercises",
+    "href": "W01_EDA1.html#exercises",
+    "title": "1  Exploratory data analysis I",
+    "section": "1.4 Exercises",
+    "text": "1.4 Exercises",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
+    ]
+  },
+  {
+    "objectID": "W01_EDA1.html#further-resources",
+    "href": "W01_EDA1.html#further-resources",
+    "title": "1  Exploratory data analysis I",
+    "section": "1.5 Further resources",
+    "text": "1.5 Further resources",
+    "crumbs": [
+      "A. Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
     ]
   }
 ]
