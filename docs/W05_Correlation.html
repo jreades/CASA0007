@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Huanfa Chen">
 
-<title>5&nbsp; Quiz – CASA0007: 
+<title>5&nbsp; Measuring relationships – CASA0007: 
  Quantitative Methods</title>
 <style>
 code{white-space: pre-wrap;}
@@ -255,7 +256,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring Relationships</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring relationships</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -347,7 +348,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./W02_EDA2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Explanatory Data Analysis II</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Title for my Slides</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -376,7 +377,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./W05_Correlation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring Relationships</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring relationships</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -402,7 +403,7 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Dimension Reduction &amp; Clustering</span></a>
+ <span class="menu-text">C. Dimension Reduction &amp; Clustering</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -427,22 +428,38 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">5.2</span> Learning Objectives</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">5.3</span> Materials</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.4</span> Exercises</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources"><span class="header-section-number">5.5</span> Further resources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W05_Correlation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring Relationships</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./W05_Correlation.html">B. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./W05_Correlation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring relationships</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quiz</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring relationships</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Huanfa Chen </p>
+          </div>
+  </div>
     
   
     
@@ -453,9 +470,32 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 </header>
 
 
-<p>Placeholder for the quiz. This will be administered on Moodle, under the “Assessments” tab.</p>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>This week is about measuring relationships between variables.</p>
+</section>
+<section id="learning-objectives" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">5.2</span> Learning Objectives</h2>
+<p>By the end of this week, you will be able to:</p>
+<ol type="1">
+<li>TBC.</li>
+<li>TBC.</li>
+<li>TBC.</li>
+</ol>
+</section>
+<section id="materials" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="materials"><span class="header-section-number">5.3</span> Materials</h2>
+<p><a href="lectures/L5_measuring_relationships.html">Lecture 5 slides</a></p>
+<p><a href="notebooks/W05_measuring_relationships_practical.ipynb">Lecture 5 tutorial</a></p>
+</section>
+<section id="exercises" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.4</span> Exercises</h2>
+</section>
+<section id="further-resources" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="further-resources"><span class="header-section-number">5.5</span> Further resources</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -887,4 +927,4 @@ gtag('config', 'G-NJWVSV2MSC', { 'anonymize_ip': true});
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W05_Correlation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huanfachen/CASA0007/edit/main/W05_Correlation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

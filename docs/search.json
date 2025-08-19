@@ -1318,12 +1318,12 @@
   {
     "objectID": "W05_Correlation.html",
     "href": "W05_Correlation.html",
-    "title": "5  Quiz",
+    "title": "5  Measuring relationships",
     "section": "",
-    "text": "Placeholder for the quiz. This will be administered on Moodle, under the “Assessments” tab.",
+    "text": "5.1 Introduction\nThis week is about measuring relationships between variables.",
     "crumbs": [
       "B. Correlation and Regression",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring Relationships</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
     ]
   },
   {
@@ -1929,6 +1929,50 @@
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>A Title for my Slides</span>"
+    ]
+  },
+  {
+    "objectID": "W05_Correlation.html#learning-objectives",
+    "href": "W05_Correlation.html#learning-objectives",
+    "title": "5  Measuring relationships",
+    "section": "5.2 Learning Objectives",
+    "text": "5.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nTBC.\nTBC.\nTBC.",
+    "crumbs": [
+      "B. Correlation and Regression",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
+    ]
+  },
+  {
+    "objectID": "W05_Correlation.html#materials",
+    "href": "W05_Correlation.html#materials",
+    "title": "5  Measuring relationships",
+    "section": "5.3 Materials",
+    "text": "5.3 Materials\nLecture 5 slides\nLecture 5 tutorial",
+    "crumbs": [
+      "B. Correlation and Regression",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
+    ]
+  },
+  {
+    "objectID": "W05_Correlation.html#exercises",
+    "href": "W05_Correlation.html#exercises",
+    "title": "5  Measuring relationships",
+    "section": "5.4 Exercises",
+    "text": "5.4 Exercises",
+    "crumbs": [
+      "B. Correlation and Regression",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
+    ]
+  },
+  {
+    "objectID": "W05_Correlation.html#further-resources",
+    "href": "W05_Correlation.html#further-resources",
+    "title": "5  Measuring relationships",
+    "section": "5.5 Further resources",
+    "text": "5.5 Further resources",
+    "crumbs": [
+      "B. Correlation and Regression",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Measuring relationships</span>"
     ]
   }
 ]
