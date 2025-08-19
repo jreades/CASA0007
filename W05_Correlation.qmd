@@ -1,4 +1,26 @@
-# Measuring Relationships
+---
+title: Measuring relationships
+author: Huanfa Chen
+---
 
-Placeholder for the quiz. This will be administered on Moodle, under the "Assessments" tab.
+## Introduction
 
+This week is about measuring relationships between variables.
+
+## Learning Objectives
+
+By the end of this week, you will be able to:
+
+1. TBC.
+2. TBC.
+3. TBC.
+
+## Materials 
+
+[Lecture 5 slides](lectures/L5_measuring_relationships.html)
+
+[Lecture 5 tutorial](notebooks/W05_measuring_relationships_practical.ipynb)
+
+## Exercises 
+
+## Further resources 
