@@ -3,7 +3,7 @@ project:
   output-dir: docs
 book:
   title: "CASA0007: \n Quantitative Methods"
-  author: "[Dr Huanfa Chen](https://huanfachen.github.io), [Dr Huanfa Chen](https://huanfachen.github.io)"
+  author: "[Huanfa Chen](https://huanfachen.github.io), [Adam Dennett](https://adamdennett.co.uk/), [Bea Taylor](https://profiles.ucl.ac.uk/82618-beatrice-taylor)"
   date: "08/18/2025"
   chapters:
     - index.qmd
