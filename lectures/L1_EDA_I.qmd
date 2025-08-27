@@ -1,6 +1,6 @@
 ---
-title: "Hypothesis Testing"
-subtitle: "Establishing and evaluating research hypotheses"
+title: "Exploratory Data Analysis I"
+subtitle: "Understanding and describing data"
 author: 
   - name: "Huanfa Chen"
 email: "huanfa.chen@ucl.ac.uk"
@@ -31,8 +31,8 @@ title-slide-attributes:
 +:------------------------+:------------------------------+
 | **Module Lead**         |  **Contact**                  |
 +=========================+===============================+
-| Prof. Adam Dennett      |  a.dennett[at]ucl.ac.uk       |
 | Dr. Huanfa Chen         |  huanfa.chen[at]ucl.ac.uk.    |
+| Prof. Adam Dennett      |  a.dennett[at]ucl.ac.uk       |
 | Dr. Beatrice Taylor     |  beatrice.taylor[at]ucl.ac.uk |
 +-------------------------+-------------------------------+
 | **PGTAs**               |                               |
@@ -42,266 +42,261 @@ title-slide-attributes:
 |                         |                               |
 +-------------------------+-------------------------------+
 
-# Last week
-
-## Overview of lecture 4
-
-Looked at data analysis.
-
 # This week 
 
-## Hypothesising 
+## Understanding and describing data 
 
-Research science is about coming up with hypotheses and evaluating them.
+- Quantitative research is the process of collecting and analysing **numerical data** to describe, model, and predict variables of interest.
+
+- Garbage in, garbage out.
 
 ::: {.notes}
-This lecture thinking about posing and answering reserach questions. 
+This lecture focuses on understanding and describing data. 
 
-I have this great idea - considering the data is this idea plausibly true?
 :::
 
 ## Learning Objectives
 By the end of this lecture you should:
 
-1. Establish a hypothesis.
-2. Define the Type I and Type II errors. -	Define the Type I and Type II errors. 
-3. Calculate the p-value.
+1. Understand basic data types;
+2. Consider how to summarise and represent data.
 
-# Motivations
 
-## How do we know what to believe?
+# Data types
 
+## Four levels of measurements
+
+|                          | Nominal | Ordinal | Interval | Ratio |
+|--------------------------|:-------:|:-------:|:--------:|:-----:|
+| Categorizes and labels variables | ✔ | ✔ | ✔ | ✔ |
+| Ranks categories in order        |   | ✔ | ✔ | ✔ |
+| Has known, equal intervals       |   |   | ✔ | ✔ |
+| Has a true or meaningful zero    |   |   |   | ✔ |
+
+- Developed by psychologist Stanley Smith Stevens (1906 - 1973)
+
+## Nominal
+
+- Differentiates items based only on names; no order between them.
+- Also called **categorical data**
+- Example: colour, gender, country names
+- What can be said about them?
+  - *Equality*: ‘apple’ is not ‘pear’, ‘apple’ is ‘apple’
+  - *Mode*: the most common item
+
+## Ordinal
+
+- Allow for rank order, but not the relative degree of difference
+- Example: measurement of opinions
+  - *completely agree*
+  - *mostly agree*
+  - *neither degree nor disagree*
+  - *mostly disagree*
+  - *completely disagree*
+- What can be said about them?
+  - ✅ Equality; mode
+  - ✅ Median: middle-ranked item
+  - ❌ Differences between two levels; arithmetic mean
+
+## Interval
+
+- Allow for degree of difference between items, but not the ratio
+- The *zero* value is arbitrary
+- Example: Celsius temperature
+  - Definition: define 0°C & 100°C, and then separate them into 100 intervals.
+  - Depends on altitude/elevation 
+
+- What can be said about them?
+  - ✅ equality, mode, median
+  - ✅ addition, arithmetic mean
+  - ❌ ratio (*100°C is NOT twice 50°C*) 
+
+## Interval
+
+- Another example: longtitude & latitude coordinates
+- *The coordinate of 8 is twice as far as that of 4*? ❌
+
+## Ratio
+- Allow for **ratio** between items
+- The zero value is unique and non-arbitrary.
+- Example: mass, length, energy
+- What can be said about them?
+  - ✅ Equality, mode, median, arithmetic mean
+  - ✅ Ratio (*2kg is twice as heavy as 1kg*)
+
+## Notes
+- 'Encoding' does not change the nature of a measurement.
+- Gender variable (male, female, others) is NOMINAL.
+- If this variable is encodeded {male:0, female:1, others:2}, is it NOMINAL, or INTERVAL?
+
+## Another categorisation: numerical vs. categorical
+| Type                           | Category        | Notes                                          |
+| ------------------------------ | --------------- | ---------------------------------------------- |
+| Quantitative (numerical) data  | Discrete data   | Only in whole numbers, *e.g.* number of staffs |
+|                                | Continuous data | *e.g.* temperature, 23°C, 23.4°C               |
+| Qualitative (categorical) data | Nominal         | Same as nominal in 'Levels of measurement'     |
+|                                | Ordinal         | See above                                      |
+
+
+## Quiz time
+::: {.notes}
+Mentimeter quiz 
+
+:::
+
+# How do you descibe a ratio data? 
+
+## Key metrics
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-**What we see in the news**
-
-- Is London less safe for cyclists than ten years ago?
-- Are x days above 30 degrees in London indicative of a warming climate? 
-- Is London’s murder rate higher than New York? 
+::: {.incremental}
+- Quantity
+- The middle
+- The spread
+:::
 
 :::
 
 ::::
 
-# How do you come up with a hypothesis? 
-
-## What is a hypothesis?
-
+## US city population
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="100%"}
 
 ::: {.incremental}
-- You have a coin. 
-- You think it's a fair coin. 
-- You toss it 10 times. 
-- It comes up heads 7 times. 
+- Quantity: 282 values
+- The middle: Mean 302869.3
+- The middle: Median 167744.5 (*Very different from mean*)
+- The middle: Mode 106433 (Useful? ❌) 
+- Should use mean or median? median is better than mean, as data is unlikely normal distributed
 :::
 
 :::
 
 ::::
 
+## Variance: quantifying spread
+Denote city population by $[y_1, y_2, ..., y_n]$ and variance by $\sigma^2$
 
-## What question can you ask?
+$$
+\begin{aligned}
+\sigma^2 &= \frac{\sum_{i=1}^{n} (y_i - \bar{y})^2}{n} \\
+&= \frac{(y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 + \dots + (y_n - \bar{y})^2}{n}
+\end{aligned}
+$$
 
+A large variance means considerable spreadedness in data.
+
+## Standard deviation $\sigma$
+$$
+\begin{aligned}
+\text{Standard Deviation} = \sqrt{\text{Variance}}
+\end{aligned}
+$$
+
+- Unit: if $y$ is in unit of meter (m), then St. Dev is in unit of m, variance in unit of $\text{m}^2$
+
+## Summary of key metrics
 :::: {.columns}
 
-::: {.column width="50%"}
-
-- You have a coin. 
-- You think it's a fair coin. 
-- You toss it 10 times. 
-- It comes up heads 7 times. 
-
-:::
-
-::: {.column width="50%"}
-
 ::: {.incremental}
-- Is it a fair coin? **NO!** 
-- What’s the probability that it’s fair? **NO!**
-- If the coin is fair, how likely would it be to see 7 heads out of 10 flips? **ALMOST!**
-:::
-
+- Quantity
+- The middle: mean, median, mode
+- The spread: variance, standard deviation
+- *Visualising data is also important*: BOXPLOT!
+- *Please check two types of SPECIAL VALUES before computing these metrics.*
 :::
 
 ::::
 
+# Visualising data
+![](images/picture_worth_thousand_words.jpg){style="max-width:70%; max-height:70%; margin:auto;"}
 
-## What question should you ask?
+## FT visual vocabulary
+- https://ft-interactive.github.io/visual-vocabulary/
+![](images/FT_visual_vocabulary.jpg){style="max-width:90%; max-height:90%; margin:auto;"}
 
-:::: {.columns}
+## Boxplot for a dataset
+- Showing distribution of a dataset
 
-::: {.column width="50%"}
+![](images/Boxplot.jpg){style="width:70%; height:70%;"}
 
-- You have a coin. 
-- You think it's a fair coin. 
-- You toss it 10 times. 
-- It comes up heads 7 times. 
+## Boxplot for comparing multiple datasets
 
-:::
+## When boxplot fails?
+- When there are lots of 'outliers' in the data
+- What are 'Outliers'?
 
-::: {.column width="50%"}
+# Special values: null and outliers
 
-**Correct formulation:** 
+## *Null* values
+- Representing the absence of data or an unknow value
+- Different from *zero* or *a blank space*
+- Null values should be excluded before computing mean or std
 
-If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR AN EVEN MORE EXTREME RESULT?*
+## Null island in geography
+- long=0, lat=0. Not even an island!
+- It became famous because some software assigned "0,0" for long-lat when location is missing
+- Many events were mapped to this one, including lots on Strava
+- Source: wikipedia.org
 
-:::
+![](images/map_null_island.jpg){height=300px} ![](images/image_null_island_2017.jpg){height=300px}
 
-::::
+## Outliers
+- A data point that differs significantly from other observations
+- There are three types of outliers
+- Please explain the rationale for removing any identified outliers, including the criteria and methods used
+
+## Outliers
+
+| Type                           | Source                                                       | Handling                                                     |
+| ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Error Outliers**             | From mistakes in data collection/entry/measurement, e.g. a temperature sensor reading 500 °C | Should be corrected or removed                               |
+| **Irregular Pattern Outliers** |  |  |
+| **Influential Outliers**       |  |  |
+
+## Outliers
+| Type                           | Source                                                       | Handling                                                     |
+| ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Error Outliers**             |  |                                |
+| **Irregular Pattern Outliers** | Genuinely occur, but do not follow general pattern or relationship in the dataset, e.g. sudden spikes in sales in Black Friday | They might indicate unusual events or anomalies worth investigating. If the purpose is to study overall pattern, they should be removed |
+| **Influential Outliers**       |  |  |
 
 
+## Outliers
+| Type                           | Source                                                       | Handling                                                     |
+| ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Error Outliers**             |  |                                |
+| **Irregular Pattern Outliers** |  |  |
+| **Influential Outliers**       | Appear extreme but are integral to the underlying pattern or model, e.g. NYC in US city population data | Should keep them, as removing them could distort the analysis or overlook important features of the data |
 
-# Establishing a Hypothesis 
+## Detecting outlier: interquartile range (IQR)
+![](images/outlier_detection_Tukey_Fences.jpg)
 
-## Step 1
-**Define the question**
+## Quiz: which type of outliers?
+- error vs. irregular pattern vs. influential
 
-Null hypothesis – the status quo. 
-The alternative hypothesis – need some evidence to verify. 
+1. In building height data, 10-storey building with 1m height
+1. In gender ratios of countries data, Vatican City with gender ratio of 7:1
+1. In UK city GDP data, GDP of Greater London
 
-## Step 2
-**Set you significance level**
-
-- Decide what “too unlikely” means BEFORE YOU DO THE TEST.
-- e.g. 𝜶 = 0.05 (5% significance)
-- This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis. 
-
-## Step 3
-**Identify the evidence**
-
-- Example: data collection – i.e urine sample for pregnancy test 
-
-## Step 4
-**Calculate the p-value**
-
-- The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.
-
-## Step 5 
-**Compare p-value with hypothesis level**
-
-- p-value > 𝜶 - Evidence not that unlikely. Not enough evidence to reject H0.
-- p-value ⩽ 𝜶 - Evidence very unlikely. Reject H0 and accept H1.
-
-## The steps
-::: {.incremental}
-1. Define the question
-2. Set you significance level
-3. Identify the evidence
-4. Calculate the p-value
-5. Compare p-value with hypothesis level
-:::
-
-## Example 
-Cyclists in London. 
-
-# Types of error 
-
-## Type I error
-
-## Type II error
-
-## Example 
-
-## Matrix of errors 
-
-# A good hypothesis or a bad hypothesis? 
-What makes a hypothesis good? 
-
-## Understanding the literature and the context 
-Hypothesis doesn’t come out of thin air
-
-## Asking ethical hypothesis questions 
-- not making unethical assumptions in choosing the hypothesis. 
-- Example: correlation between ethnicity and crime
-- Use contextual knowledge to consider correlation vs causation 
-
-## Correlation vs. Causation 
-Lots of things can be correlated - but it doesn't mean one event caused another. 
-
-## Aliens and taxes 
-Example from spurious correlations 
-
-## Correlation IS NOT causation 
-You might not know whether events are correlated, or causing each other. 
-
-The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions
-
-## The point of the scientific method
-The process of coming up with a question, testing, iterating.
-
-# Statistical tests 
-
-## Parametric vs. Non-parametric tests
-
-## Parametric Tests 
-- Evaluate hypothesis for specific parameters 
-- Typically have assumptions about the distribution - e.g. assumed normal distribution 
-
-## Non-parametric Tests 
-- Evaluate hypotheis for entire population distirbution 
-- Typcially less assumptions on the ditribution 
-
-## How many tails 
-
-Tests can be one-tailed or two-tailed. 
-
-![](L3_images/one-tailed-vs-two-tailed-test.jpg){.absolute top="170" left="30" width="700"}
-
-# Parametric tests 
-
-## T-test 
-Assumes the data is normally distributed. 
-
-## T-test example 
-
-What is the probability of someone age 15 being a student on CASA007? 
-
-The probability is very small so we reject. 
-
-## Regression T-tests
-
-Is the gradient non-zero?
-
-This indicates a correlation between the two variables. 
-
-...
-
-This will be covered further in lecture X on linear regression. 
-
-## Mean comparison t-test 
-
-Compares the mean of two distributions. 
-
-# Non-parametric tests 
-
-## Kolmogorov-Smirnov test 
-::: {.incremental}
-- Compares two probability distributions 
-- Can be used to test whether an observed sameple came from a given distribution 
-- Or to test whether two samples both came from the same distribution
-:::
-
-## Kernel density estimate 
-::: {.incremental}
-- Used to generate a smooth PDF for a random variable dataset. 
-- Think of it as getting a smooth function to describe a histogram of data. 
-- There are no assumptions about the prior distribution
-:::
+## Summary: describing a dataset
+- Key metrics
+- Null values and outliers (and handle them!)
+- Visualising data
 
 # Overview 
 We've covered: 
 
-- What makes a good hypothesis 
-- How to formally state a hypothesis 
-- Types of statistical tests 
-
+- Data types: levels of measurements; quantitative & qualitative
+- Key metrics 
+- Null values and outliers
+- Visualising data
 
 # Practical 
-Practical will focus on establishing a evaluation a hypothesis. 
+Practical will focus on setting up Python environment. 
 
 - Have questions prepared!
