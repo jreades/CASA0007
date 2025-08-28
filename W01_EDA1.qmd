@@ -5,15 +5,15 @@ author: Huanfa Chen
 
 ## Introduction
 
-This week is about measuring TBC.
+This week will introduce data types and key metrics for describing and representing data.
 
 ## Learning Objectives
 
 By the end of this week, you will be able to:
 
-1. TBC.
-2. TBC.
-3. TBC.
+1. Understand data types.
+2. Describe and represent data using key metrics.
+3. Visualise data with boxplot.
 
 ## Materials 
 

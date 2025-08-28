@@ -44,7 +44,7 @@
     "href": "W01_EDA1.html",
     "title": "1  Exploratory data analysis I",
     "section": "",
-    "text": "1.1 Introduction\nThis week is about measuring TBC.",
+    "text": "1.1 Introduction\nThis week will introduce data types and key metrics for describing and representing data.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
@@ -2068,7 +2068,7 @@
     "href": "W01_EDA1.html#learning-objectives",
     "title": "1  Exploratory data analysis I",
     "section": "1.2 Learning Objectives",
-    "text": "1.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nTBC.\nTBC.\nTBC.",
+    "text": "1.2 Learning Objectives\nBy the end of this week, you will be able to:\n\nUnderstand data types.\nDescribe and represent data using key metrics.\nVisualise data with boxplot.",
     "crumbs": [
       "A. Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Exploratory data analysis I</span>"
