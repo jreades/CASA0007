@@ -13,7 +13,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Huanfa Chen">
-  <title>Hypothesis Testing</title>
+  <title>Exploratory Data Analysis I</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -135,9 +135,9 @@
 <br>
 <br>
 
-<h1 class="title">Hypothesis Testing</h1>
+<h1 class="title">Exploratory Data Analysis I</h1>
 
-  <h3 style="opacity:0.8;" class="subtitle">Establishing and evaluating research hypotheses</h3>
+  <h3 style="opacity:0.8;" class="subtitle">Understanding and describing data</h3>
 
 <p><span style="margin:0px; font-weight:700;" class="author">Huanfa Chen</span> - huanfa.chen@ucl.ac.uk </p>
 
@@ -160,8 +160,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td>Prof.&nbsp;Adam Dennett Dr.&nbsp;Huanfa Chen Dr.&nbsp;Beatrice Taylor</td>
-<td>a.dennett[at]ucl.ac.uk huanfa.chen[at]ucl.ac.uk. beatrice.taylor[at]ucl.ac.uk</td>
+<td>Dr.&nbsp;Huanfa Chen Prof.&nbsp;Adam Dennett Dr.&nbsp;Beatrice Taylor</td>
+<td>huanfa.chen[at]ucl.ac.uk. a.dennett[at]ucl.ac.uk beatrice.taylor[at]ucl.ac.uk</td>
 </tr>
 <tr class="even">
 <td><strong>PGTAs</strong></td>
@@ -176,25 +176,18 @@
 </section>
 
 <section>
-<section id="last-week" class="title-slide slide level1 center">
-<h1>Last week</h1>
-
-</section>
-<section id="overview-of-lecture-4" class="slide level2">
-<h2>Overview of lecture 4</h2>
-<p>Looked at data analysis.</p>
-</section></section>
-<section>
 <section id="this-week" class="title-slide slide level1 center">
 <h1>This week</h1>
 
 </section>
-<section id="hypothesising" class="slide level2">
-<h2>Hypothesising</h2>
-<p>Research science is about coming up with hypotheses and evaluating them.</p>
+<section id="understanding-and-describing-data" class="slide level2">
+<h2>Understanding and describing data</h2>
+<ul>
+<li><p>Quantitative research is the process of collecting and analysing <strong>numerical data</strong> to describe, model, and predict variables of interest.</p></li>
+<li><p>Garbage in, garbage out.</p></li>
+</ul>
 <aside class="notes">
-<p>This lecture thinking about posing and answering reserach questions.</p>
-<p>I have this great idea - considering the data is this idea plausibly true?</p>
+<p>This lecture focuses on understanding and describing data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -211,270 +204,458 @@
 <h2>Learning Objectives</h2>
 <p>By the end of this lecture you should:</p>
 <ol type="1">
-<li>Establish a hypothesis.</li>
-<li>Define the Type I and Type II errors. - Define the Type I and Type II errors.</li>
-<li>Calculate the p-value.</li>
+<li>Understand basic data types;</li>
+<li>Consider how to summarise and represent data.</li>
+<li>Use notations for describing datasets.</li>
 </ol>
 </section></section>
 <section>
-<section id="motivations" class="title-slide slide level1 center">
-<h1>Motivations</h1>
+<section id="data-types" class="title-slide slide level1 center">
+<h1>Data types</h1>
 
 </section>
-<section id="how-do-we-know-what-to-believe" class="slide level2">
-<h2>How do we know what to believe?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>What we see in the news</strong></p>
+<section id="four-levels-of-measurements" class="slide level2">
+<h2>Four levels of measurements</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Nominal</th>
+<th style="text-align: center;">Ordinal</th>
+<th style="text-align: center;">Interval</th>
+<th style="text-align: center;">Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Categorizes and labels variables</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+</tr>
+<tr class="even">
+<td>Ranks categories in order</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+</tr>
+<tr class="odd">
+<td>Has known, equal intervals</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+</tr>
+<tr class="even">
+<td>Has a true or meaningful zero</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Is London less safe for cyclists than ten years ago?</li>
-<li>Are x days above 30 degrees in London indicative of a warming climate?</li>
-<li>Is London’s murder rate higher than New York?</li>
+<li>Developed by psychologist Stanley Smith Stevens (1906 - 1973)</li>
 </ul>
-</div></div>
+</section>
+<section id="nominal" class="slide level2">
+<h2>Nominal</h2>
+<ul>
+<li>Differentiates items based only on names; no order between them.</li>
+<li>Also called <strong>categorical data</strong></li>
+<li>Example: colour, gender, country names</li>
+<li>What can be said about them?
+<ul>
+<li><em>Equality</em>: ‘apple’ is not ‘pear’, ‘apple’ is ‘apple’</li>
+<li><em>Mode</em>: the most common item</li>
+</ul></li>
+</ul>
+</section>
+<section id="ordinal" class="slide level2">
+<h2>Ordinal</h2>
+<ul>
+<li>Allow for rank order, but not the relative degree of difference</li>
+<li>Example: measurement of opinions
+<ul>
+<li><em>completely agree</em></li>
+<li><em>mostly agree</em></li>
+<li><em>neither degree nor disagree</em></li>
+<li><em>mostly disagree</em></li>
+<li><em>completely disagree</em></li>
+</ul></li>
+<li>What can be said about them?
+<ul>
+<li>✅ Equality; mode</li>
+<li>✅ Median: middle-ranked item</li>
+<li>❌ Differences between two levels; arithmetic mean</li>
+</ul></li>
+</ul>
+</section>
+<section id="interval" class="slide level2">
+<h2>Interval</h2>
+<ul>
+<li>Allow for degree of difference between items, but not the ratio</li>
+<li>The <em>zero</em> value is arbitrary</li>
+<li>Example: Celsius temperature
+<ul>
+<li>Definition: define 0°C &amp; 100°C, and then separate them into 100 intervals.</li>
+<li>Depends on altitude/elevation</li>
+</ul></li>
+<li>What can be said about them?
+<ul>
+<li>✅ equality, mode, median</li>
+<li>✅ addition, arithmetic mean</li>
+<li>❌ ratio (<em>100°C is NOT twice 50°C</em>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="interval-1" class="slide level2">
+<h2>Interval</h2>
+<ul>
+<li>Another example: longtitude &amp; latitude coordinates</li>
+<li><em>The coordinate of 8 is twice as far as that of 4</em>? ❌</li>
+</ul>
+</section>
+<section id="ratio" class="slide level2">
+<h2>Ratio</h2>
+<ul>
+<li>Allow for <strong>ratio</strong> between items</li>
+<li>The zero value is unique and non-arbitrary.</li>
+<li>Example: mass, length, energy</li>
+<li>What can be said about them?
+<ul>
+<li>✅ Equality, mode, median, arithmetic mean</li>
+<li>✅ Ratio (<em>2kg is twice as heavy as 1kg</em>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="notes" class="slide level2">
+<h2>Notes</h2>
+<ul>
+<li>‘Encoding’ does not change the nature of a measurement.</li>
+<li>Gender variable (male, female, others) is NOMINAL.</li>
+<li>If this variable is encodeded {male:0, female:1, others:2}, is it NOMINAL, or INTERVAL?</li>
+</ul>
+</section>
+<section id="another-categorisation-numerical-vs.-categorical" class="slide level2">
+<h2>Another categorisation: numerical vs.&nbsp;categorical</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 16%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Category</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quantitative (numerical) data</td>
+<td>Discrete data</td>
+<td>Only in whole numbers, <em>e.g.</em> number of staffs</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Continuous data</td>
+<td><em>e.g.</em> temperature, 23°C, 23.4°C</td>
+</tr>
+<tr class="odd">
+<td>Qualitative (categorical) data</td>
+<td>Nominal</td>
+<td>Same as nominal in ‘Levels of measurement’</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ordinal</td>
+<td>See above</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quiz-time" class="slide level2">
+<h2>Quiz time</h2>
+<aside class="notes">
+<p>Mentimeter quiz</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
-<section id="how-do-you-come-up-with-a-hypothesis" class="title-slide slide level1 center">
-<h1>How do you come up with a hypothesis?</h1>
+<section id="how-do-you-descibe-a-ratio-data" class="title-slide slide level1 center">
+<h1>How do you descibe a ratio data?</h1>
 
 </section>
-<section id="what-is-a-hypothesis" class="slide level2">
-<h2>What is a hypothesis?</h2>
+<section id="key-metrics" class="slide level2">
+<h2>Key metrics</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li class="fragment">You have a coin.</li>
-<li class="fragment">You think it’s a fair coin.</li>
-<li class="fragment">You toss it 10 times.</li>
-<li class="fragment">It comes up heads 7 times.</li>
+<li class="fragment">Quantity</li>
+<li class="fragment">The middle</li>
+<li class="fragment">The spread</li>
 </ul>
 </div></div>
 </section>
-<section id="what-question-can-you-ask" class="slide level2">
-<h2>What question can you ask?</h2>
+<section id="us-city-population" class="slide level2">
+<h2>US city population</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:100%;">
 <ul>
-<li>You have a coin.</li>
-<li>You think it’s a fair coin.</li>
-<li>You toss it 10 times.</li>
-<li>It comes up heads 7 times.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Is it a fair coin? <strong>NO!</strong></li>
-<li class="fragment">What’s the probability that it’s fair? <strong>NO!</strong></li>
-<li class="fragment">If the coin is fair, how likely would it be to see 7 heads out of 10 flips? <strong>ALMOST!</strong></li>
+<li class="fragment">Quantity: 282 values</li>
+<li class="fragment">The middle: Mean 302869.3</li>
+<li class="fragment">The middle: Median 167744.5 (<em>Very different from mean</em>)</li>
+<li class="fragment">The middle: Mode 106433 (Useful? ❌)</li>
+<li class="fragment">Should use mean or median? median is better than mean, as data is unlikely normal distributed</li>
 </ul>
 </div></div>
 </section>
-<section id="what-question-should-you-ask" class="slide level2">
-<h2>What question should you ask?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="variance-quantifying-spread" class="slide level2">
+<h2>Variance: quantifying spread</h2>
+<p>Denote city population by <span class="math inline">\([y_1, y_2, ..., y_n]\)</span> and variance by <span class="math inline">\(\sigma^2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma^2 &amp;= \frac{\sum_{i=1}^{n} (y_i - \bar{y})^2}{n} \\
+&amp;= \frac{(y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 + \dots + (y_n - \bar{y})^2}{n}
+\end{aligned}
+\]</span></p>
+<p>A large variance means considerable spreadedness in data.</p>
+</section>
+<section id="standard-deviation-sigma" class="slide level2">
+<h2>Standard deviation <span class="math inline">\(\sigma\)</span></h2>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Standard Deviation} = \sqrt{\text{Variance}}
+\end{aligned}
+\]</span></p>
 <ul>
-<li>You have a coin.</li>
-<li>You think it’s a fair coin.</li>
-<li>You toss it 10 times.</li>
-<li>It comes up heads 7 times.</li>
+<li>Unit: if <span class="math inline">\(y\)</span> is in unit of meter (m), then St.&nbsp;Dev is in unit of m, variance in unit of <span class="math inline">\(\text{m}^2\)</span></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Correct formulation:</strong></p>
-<p>If the coin is fair, how likely would it be to see 7 heads out of 10 flips <em>OR AN EVEN MORE EXTREME RESULT?</em></p>
-</div></div>
+</section>
+<section id="summary-of-key-metrics" class="slide level2">
+<h2>Summary of key metrics</h2>
+<div class="columns">
+<ul>
+<li class="fragment">Quantity</li>
+<li class="fragment">The middle: mean, median, mode</li>
+<li class="fragment">The spread: variance, standard deviation</li>
+<li class="fragment"><em>Visualising data is also important</em>: BOXPLOT!</li>
+<li class="fragment"><em>Please check two types of SPECIAL VALUES before computing these metrics.</em></li>
+</ul>
+</div>
 </section></section>
 <section>
-<section id="establishing-a-hypothesis" class="title-slide slide level1 center">
-<h1>Establishing a Hypothesis</h1>
+<section id="visualising-data" class="title-slide slide level1 center">
+<h1>Visualising data</h1>
+<p><a href="images/picture_worth_thousand_words.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/picture_worth_thousand_words.jpg" style="max-width:70%; max-height:70%; margin:auto;"></a></p>
+</section>
+<section id="ft-visual-vocabulary" class="slide level2">
+<h2>FT visual vocabulary</h2>
+<ul>
+<li>https://ft-interactive.github.io/visual-vocabulary/ <img data-src="images/FT_visual_vocabulary.jpg" style="max-width:90%; max-height:90%; margin:auto;"></li>
+</ul>
+</section>
+<section id="boxplot-for-a-dataset" class="slide level2">
+<h2>Boxplot for a dataset</h2>
+<ul>
+<li>Showing distribution of a dataset</li>
+</ul>
+<p><a href="images/Boxplot.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/Boxplot.jpg" style="width:70%; height:70%;"></a></p>
+</section>
+<section id="boxplot-for-comparing-multiple-datasets" class="slide level2">
+<h2>Boxplot for comparing multiple datasets</h2>
+</section>
+<section id="when-boxplot-fails" class="slide level2">
+<h2>When boxplot fails?</h2>
+<ul>
+<li>When there are lots of ‘outliers’ in the data</li>
+<li>What are ‘Outliers’?</li>
+</ul>
+</section></section>
+<section>
+<section id="special-values-null-and-outliers" class="title-slide slide level1 center">
+<h1>Special values: null and outliers</h1>
 
 </section>
-<section id="step-1" class="slide level2">
-<h2>Step 1</h2>
-<p><strong>Define the question</strong></p>
-<p>Null hypothesis – the status quo. The alternative hypothesis – need some evidence to verify.</p>
-</section>
-<section id="step-2" class="slide level2">
-<h2>Step 2</h2>
-<p><strong>Set you significance level</strong></p>
+<section id="null-values" class="slide level2">
+<h2><em>Null</em> values</h2>
 <ul>
-<li>Decide what “too unlikely” means BEFORE YOU DO THE TEST.</li>
-<li>e.g.&nbsp;𝜶 = 0.05 (5% significance)</li>
-<li>This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis.</li>
+<li>Representing the absence of data or an unknow value</li>
+<li>Different from <em>zero</em> or <em>a blank space</em></li>
+<li>Null values should be excluded before computing mean or std</li>
 </ul>
 </section>
-<section id="step-3" class="slide level2">
-<h2>Step 3</h2>
-<p><strong>Identify the evidence</strong></p>
+<section id="null-island-in-geography" class="slide level2">
+<h2>Null island in geography</h2>
 <ul>
-<li>Example: data collection – i.e urine sample for pregnancy test</li>
+<li>long=0, lat=0. Not even an island!</li>
+<li>It became famous because some software assigned “0,0” for long-lat when location is missing</li>
+<li>Many events were mapped to this one, including lots on Strava</li>
+<li>Source: wikipedia.org</li>
+</ul>
+<p><img data-src="images/map_null_island.jpg" height="300"> <img data-src="images/image_null_island_2017.jpg" height="300"></p>
+</section>
+<section id="outliers" class="slide level2">
+<h2>Outliers</h2>
+<ul>
+<li>A data point that differs significantly from other observations</li>
+<li>There are three types of outliers</li>
+<li>Please explain the rationale for removing any identified outliers, including the criteria and methods used</li>
 </ul>
 </section>
-<section id="step-4" class="slide level2">
-<h2>Step 4</h2>
-<p><strong>Calculate the p-value</strong></p>
-<ul>
-<li>The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.</li>
-</ul>
+<section id="outliers-1" class="slide level2">
+<h2>Outliers</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Source</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Error Outliers</strong></td>
+<td>From mistakes in data collection/entry/measurement, e.g.&nbsp;a temperature sensor reading 500 °C</td>
+<td>Should be corrected or removed</td>
+</tr>
+<tr class="even">
+<td><strong>Irregular Pattern Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Influential Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="step-5" class="slide level2">
-<h2>Step 5</h2>
-<p><strong>Compare p-value with hypothesis level</strong></p>
-<ul>
-<li>p-value &gt; 𝜶 - Evidence not that unlikely. Not enough evidence to reject H0.</li>
-<li>p-value ⩽ 𝜶 - Evidence very unlikely. Reject H0 and accept H1.</li>
-</ul>
+<section id="outliers-2" class="slide level2">
+<h2>Outliers</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Source</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Error Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Irregular Pattern Outliers</strong></td>
+<td>Genuinely occur, but do not follow general pattern or relationship in the dataset, e.g.&nbsp;sudden spikes in sales in Black Friday</td>
+<td>They might indicate unusual events or anomalies worth investigating. If the purpose is to study overall pattern, they should be removed</td>
+</tr>
+<tr class="odd">
+<td><strong>Influential Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="the-steps" class="slide level2">
-<h2>The steps</h2>
+<section id="outliers-3" class="slide level2">
+<h2>Outliers</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Source</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Error Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Irregular Pattern Outliers</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Influential Outliers</strong></td>
+<td>Appear extreme but are integral to the underlying pattern or model, e.g.&nbsp;NYC in US city population data</td>
+<td>Should keep them, as removing them could distort the analysis or overlook important features of the data</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detecting-outlier-interquartile-range-iqr" class="slide level2">
+<h2>Detecting outlier: interquartile range (IQR)</h2>
+<p><a href="images/outlier_detection_Tukey_Fences.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/outlier_detection_Tukey_Fences.jpg"></a></p>
+</section>
+<section id="quiz-which-type-of-outliers" class="slide level2">
+<h2>Quiz: which type of outliers?</h2>
+<ul>
+<li>error vs.&nbsp;irregular pattern vs.&nbsp;influential</li>
+</ul>
 <ol type="1">
-<li class="fragment">Define the question</li>
-<li class="fragment">Set you significance level</li>
-<li class="fragment">Identify the evidence</li>
-<li class="fragment">Calculate the p-value</li>
-<li class="fragment">Compare p-value with hypothesis level</li>
+<li>In building height data, 10-storey building with 1m height</li>
+<li>In gender ratios of countries data, Vatican City with gender ratio of 7:1</li>
+<li>In UK city GDP data, GDP of Greater London</li>
 </ol>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>Cyclists in London.</p>
-</section></section>
-<section>
-<section id="types-of-error" class="title-slide slide level1 center">
-<h1>Types of error</h1>
-
-</section>
-<section id="type-i-error" class="slide level2">
-<h2>Type I error</h2>
-</section>
-<section id="type-ii-error" class="slide level2">
-<h2>Type II error</h2>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
-</section>
-<section id="matrix-of-errors" class="slide level2">
-<h2>Matrix of errors</h2>
-</section></section>
-<section>
-<section id="a-good-hypothesis-or-a-bad-hypothesis" class="title-slide slide level1 center">
-<h1>A good hypothesis or a bad hypothesis?</h1>
-<p>What makes a hypothesis good?</p>
-</section>
-<section id="understanding-the-literature-and-the-context" class="slide level2">
-<h2>Understanding the literature and the context</h2>
-<p>Hypothesis doesn’t come out of thin air</p>
-</section>
-<section id="asking-ethical-hypothesis-questions" class="slide level2">
-<h2>Asking ethical hypothesis questions</h2>
+<section id="summary-describing-a-dataset" class="slide level2">
+<h2>Summary: describing a dataset</h2>
 <ul>
-<li>not making unethical assumptions in choosing the hypothesis.</li>
-<li>Example: correlation between ethnicity and crime</li>
-<li>Use contextual knowledge to consider correlation vs causation</li>
-</ul>
-</section>
-<section id="correlation-vs.-causation" class="slide level2">
-<h2>Correlation vs.&nbsp;Causation</h2>
-<p>Lots of things can be correlated - but it doesn’t mean one event caused another.</p>
-</section>
-<section id="aliens-and-taxes" class="slide level2">
-<h2>Aliens and taxes</h2>
-<p>Example from spurious correlations</p>
-</section>
-<section id="correlation-is-not-causation" class="slide level2">
-<h2>Correlation IS NOT causation</h2>
-<p>You might not know whether events are correlated, or causing each other.</p>
-<p>The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions</p>
-</section>
-<section id="the-point-of-the-scientific-method" class="slide level2">
-<h2>The point of the scientific method</h2>
-<p>The process of coming up with a question, testing, iterating.</p>
-</section></section>
-<section>
-<section id="statistical-tests" class="title-slide slide level1 center">
-<h1>Statistical tests</h1>
-
-</section>
-<section id="parametric-vs.-non-parametric-tests" class="slide level2">
-<h2>Parametric vs.&nbsp;Non-parametric tests</h2>
-</section>
-<section id="parametric-tests" class="slide level2">
-<h2>Parametric Tests</h2>
-<ul>
-<li>Evaluate hypothesis for specific parameters</li>
-<li>Typically have assumptions about the distribution - e.g.&nbsp;assumed normal distribution</li>
-</ul>
-</section>
-<section id="non-parametric-tests" class="slide level2">
-<h2>Non-parametric Tests</h2>
-<ul>
-<li>Evaluate hypotheis for entire population distirbution</li>
-<li>Typcially less assumptions on the ditribution</li>
-</ul>
-</section>
-<section id="how-many-tails" class="slide level2">
-<h2>How many tails</h2>
-<p>Tests can be one-tailed or two-tailed.</p>
-<p><a href="L3_images/one-tailed-vs-two-tailed-test.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L3_images/one-tailed-vs-two-tailed-test.jpg" class="absolute" style="top: 170px; left: 30px; width: 700px; "></a></p>
-</section></section>
-<section>
-<section id="parametric-tests-1" class="title-slide slide level1 center">
-<h1>Parametric tests</h1>
-
-</section>
-<section id="t-test" class="slide level2">
-<h2>T-test</h2>
-<p>Assumes the data is normally distributed.</p>
-</section>
-<section id="t-test-example" class="slide level2">
-<h2>T-test example</h2>
-<p>What is the probability of someone age 15 being a student on CASA007?</p>
-<p>The probability is very small so we reject.</p>
-</section>
-<section id="regression-t-tests" class="slide level2">
-<h2>Regression T-tests</h2>
-<p>Is the gradient non-zero?</p>
-<p>This indicates a correlation between the two variables.</p>
-<p>…</p>
-<p>This will be covered further in lecture X on linear regression.</p>
-</section>
-<section id="mean-comparison-t-test" class="slide level2">
-<h2>Mean comparison t-test</h2>
-<p>Compares the mean of two distributions.</p>
-</section></section>
-<section>
-<section id="non-parametric-tests-1" class="title-slide slide level1 center">
-<h1>Non-parametric tests</h1>
-
-</section>
-<section id="kolmogorov-smirnov-test" class="slide level2">
-<h2>Kolmogorov-Smirnov test</h2>
-<ul>
-<li class="fragment">Compares two probability distributions</li>
-<li class="fragment">Can be used to test whether an observed sameple came from a given distribution</li>
-<li class="fragment">Or to test whether two samples both came from the same distribution</li>
-</ul>
-</section>
-<section id="kernel-density-estimate" class="slide level2">
-<h2>Kernel density estimate</h2>
-<ul>
-<li class="fragment">Used to generate a smooth PDF for a random variable dataset.</li>
-<li class="fragment">Think of it as getting a smooth function to describe a histogram of data.</li>
-<li class="fragment">There are no assumptions about the prior distribution</li>
+<li>Key metrics</li>
+<li>Null values and outliers (and handle them!)</li>
+<li>Visualising data</li>
 </ul>
 </section></section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
 <p>We’ve covered:</p>
 <ul>
-<li>What makes a good hypothesis</li>
-<li>How to formally state a hypothesis</li>
-<li>Types of statistical tests</li>
+<li>Data types: levels of measurements; quantitative &amp; qualitative</li>
+<li>Key metrics</li>
+<li>Null values and outliers</li>
+<li>Visualising data</li>
 </ul>
 </section>
 
 <section id="practical" class="title-slide slide level1 center">
 <h1>Practical</h1>
-<p>Practical will focus on establishing a evaluation a hypothesis.</p>
+<p>Practical will focus on setting up Python environment.</p>
 <ul>
 <li>Have questions prepared!</li>
 </ul>
