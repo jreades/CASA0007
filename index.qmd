@@ -10,7 +10,7 @@ The final section of the course introduces advanced techniques for uncovering hi
 
 Therefore, this module guides students on a complete analytical journey, from foundational principles to the application of advanced modelling techniques. It serves as a vital prerequisite for more specialised analytical modules and is essential for students wishing to undertake quantitative geospatial research. Ultimately, this module will provide quantitative skills that are in high demand across public, private, and academic sectors.
 
-[Module introduction slides](Module_Intro.html)
+[Module introduction slides](lectures/Module_Intro.html)
 
 ## Table of Contents
 A) **Basics**
