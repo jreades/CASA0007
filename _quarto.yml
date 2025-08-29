@@ -1,6 +1,12 @@
 project:
-  type: book
-  output-dir: docs
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+  resources:
+    - "bib/"
+    - "img/"
+    - "!data/"
 book:
   title: "CASA0007: \n Quantitative Methods"
   author: "[Huanfa Chen](https://huanfachen.github.io), [Adam Dennett](https://adamdennett.co.uk/), [Bea Taylor](https://profiles.ucl.ac.uk/82618-beatrice-taylor)"
@@ -13,7 +19,6 @@ book:
         - W02_EDA2.qmd
         - W03_HypoTesting.qmd
         - W04_LA.qmd
-
     - part: "B. Correlation and Regression"
       chapters:
         - W05_Correlation.qmd
@@ -27,7 +32,7 @@ book:
   repo-url: https://github.com/huanfachen/CASA0007/
   google-analytics: G-NJWVSV2MSC
   repo-actions: [edit]
-  downloads: [pdf, epub]
+  # downloads: [pdf, epub]
   sharing: [twitter, facebook]
   favicon: favicon.ico
   sidebar:
