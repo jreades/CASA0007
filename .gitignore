@@ -1,4 +1,5 @@
 /.quarto/
 /_site/
+.DS_Store
 notebooks/W05_quiz.ipynb
 notebooks/W05_quiz_solution.ipynb
